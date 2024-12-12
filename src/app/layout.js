@@ -84,6 +84,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/"
+                    onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
@@ -93,6 +94,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/about"
+                    onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
@@ -102,6 +104,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/blogs"
+                    onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
@@ -111,6 +114,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/experience"
+                    onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
@@ -120,6 +124,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/contact"
+                    onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
@@ -134,6 +139,7 @@ export default function RootLayout({ children }) {
                   rel="noopener noreferrer"
                 >
                   <button
+                    onClick={toggleMenu}
                     className="px-4 py-2 border-2 text-bold rounded-md bg-white transition duration-300 hover:bg-[#dfeded]"
                     style={{
                       color: themeColors.primaryText,
@@ -144,6 +150,7 @@ export default function RootLayout({ children }) {
                   </button>
                 </a>
                 <button
+                  onClick={toggleMenu}
                   className="px-4 py-2 rounded-md text-white bg-gradient-to-r from-[#319795] to-[#46b97a] transition duration-300 hover:from-[#225756] hover:to-[#225756]"
                 >
                   Resume
