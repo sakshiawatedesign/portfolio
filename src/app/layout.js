@@ -1,11 +1,12 @@
 "use client";
 
-import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
 import themeColors from "../lib/theme-colors";
 import Image from "next/image";
 
+import OutLinedBtn from "./components/common_copmps.js/outlined_btn";
+import GradientBtn from "./components/common_copmps.js/gradient_btn";
 import { Poppins } from "next/font/google";
 import { useState, useEffect, useRef } from "react";
 
@@ -138,7 +139,7 @@ export default function RootLayout({ children }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button
+                  {/* <button
                     onClick={toggleMenu}
                     className="px-4 py-2 border-2 text-bold rounded-md bg-white transition duration-300 hover:bg-[#dfeded]"
                     style={{
@@ -147,14 +148,23 @@ export default function RootLayout({ children }) {
                     }}
                   >
                     GitHub
-                  </button>
+                  </button> */}
+
+                  <OutLinedBtn
+                    onClick={toggleMenu}
+                    text="GitHub"
+                  />
                 </a>
-                <button
+                {/* <button
                   onClick={toggleMenu}
                   className="px-4 py-2 rounded-md text-white bg-gradient-to-r from-[#319795] to-[#46b97a] transition duration-300 hover:from-[#225756] hover:to-[#225756]"
                 >
                   Resume
-                </button>
+                </button> */}
+                <GradientBtn
+                  text="Resume"
+                  onClick={toggleMenu}
+                />
               </div>
             </div>
           </div>
@@ -231,21 +241,19 @@ export default function RootLayout({ children }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button
-                    className="px-4 py-2 border-2 text-bold rounded-md bg-white transition duration-300 hover:bg-[#dfeded]"
-                    style={{
-                      color: themeColors.primaryText,
-                      borderColor: themeColors.primaryText,
-                    }}
-                  >
-                    GitHub
-                  </button>
+                  <OutLinedBtn
+                    text="GitHub"
+                  />
                 </a>
-                <button
+                {/* <button
                   className="px-4 py-2 rounded-md text-white bg-gradient-to-r from-[#319795] to-[#46b97a] transition duration-300 hover:from-[#225756] hover:to-[#225756]"
                 >
                   Resume
-                </button>
+                </button> */}
+                <GradientBtn
+                  text="Resume"
+                />
+
               </div>
             </div>
 

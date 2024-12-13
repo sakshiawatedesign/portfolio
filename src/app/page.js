@@ -1,15 +1,63 @@
+"use client";
+import { useEffect, useState } from 'react';
 import LongBtn from "./components/home_page_comps.js/long_btn";
 import SocialIcons from "./components/home_page_comps.js/social_icons";
+import OutLinedBtn from "./components/common_copmps.js/outlined_btn";
+import GradientBtn from "./components/common_copmps.js/gradient_btn";
 
 export default function Home() {
+
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 770);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const brElement = document.getElementById('break');
+      if (window.innerWidth <= 1080) {
+        brElement.style.display = 'none';
+      } else {
+        brElement.style.display = 'block';
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const redirectToEmail = () => {
+    window.location.href = 'mailto:arunvishwakarma3009@gmail.com';
+  };
   return (
     <div className="">
       {/* Wrapper for centering the button */}
-      <div className="flex justify-center mt-5 mb-0">
+      <div className="flex justify-center mt-3">
         <LongBtn />
       </div>
 
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between py-12 px-6">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between py-6 px-6">
         {/* Content Column - Full width on mobile, half width on desktop */}
         <div className="w-full md:w-[65%] text-start">
           {/* Main Heading - Smaller text on mobile */}
@@ -21,22 +69,25 @@ export default function Home() {
           </h1>
 
           {/* Subheading */}
-          <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-600">
-            I design and create{" "}
-            <span className="text-green-600">functional</span> and{" "}
-            <span className="text-green-600">beautiful</span> applications with{" "}
-            passion and <br></br> a focus on <span className="text-blue-600">user experience</span> and{" "}
-            <span className="text-blue-600">high quality</span>.
+          <p className="mt-4 md:mt-6 text-base md:text-md text-gray-600">
+            I design and develop{" "}
+            <span style={{ fontWeight: "700" }} className="gradient-text">functional</span> and{" "}
+            <span style={{ fontWeight: "700" }} className="gradient-text">beautiful</span> mobile applications with{" "}
+            passion and <br id="break" style={{ display: 'block' }} /> a focus on <span style={{ fontWeight: "700" }} className="gradient-text">user experience</span> and{" "}
+            <span style={{ fontWeight: "700" }} className="gradient-text">high quality</span>.
           </p>
 
           {/* Buttons */}
           <div className="mt-6 md:mt-8 flex space-x-4">
-            <button className="px-4 md:px-6 py-2 md:py-3 text-sm md:text-base text-white bg-green-600 rounded-lg shadow-lg hover:bg-green-700">
-              Hire me
-            </button>
-            <button className="px-4 md:px-6 py-2 md:py-3 text-sm md:text-base text-green-600 border-2 border-green-600 rounded-lg shadow-lg hover:bg-green-100">
-              Schedule a Meeting
-            </button>
+            <OutLinedBtn text={"Hire me"} onClick={redirectToEmail} />
+
+            <div>
+              {isLargeScreen ? (
+                <GradientBtn text={"View Projects"} onClick={() => { }} />
+              ) : (
+                <GradientBtn text={"View CV"} onClick={() => { }} />
+              )}
+            </div>
           </div>
 
           {/* Social Icons */}
@@ -51,6 +102,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

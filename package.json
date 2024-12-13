@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.1.0",
+    "@fortawesome/fontawesome-free": "^6.7.1",
     "@next/font": "^14.2.15",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
