@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding-left: 16px;
   /* Default padding for small devices */
@@ -30,6 +28,17 @@ body {
   }
 
 
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #319795 0%, #46b97a 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
 }
 
 @layer base {
