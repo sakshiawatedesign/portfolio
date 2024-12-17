@@ -4,6 +4,9 @@ import LongBtn from "./components/home_page_comps.js/long_btn";
 import SocialIcons from "./components/home_page_comps.js/social_icons";
 import OutLinedBtn from "./components/common_copmps.js/outlined_btn";
 import GradientBtn from "./components/common_copmps.js/gradient_btn";
+import Spacer from "./components/common/spacer";
+import FeatureCard from './components/home_page_comps.js/featured_card'
+
 
 export default function Home() {
 
@@ -57,7 +60,7 @@ export default function Home() {
         <LongBtn />
       </div>
 
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between py-6 px-6">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between py-6 px-3">
         {/* Content Column - Full width on mobile, half width on desktop */}
         <div className="w-full md:w-[65%] text-start">
           {/* Main Heading - Smaller text on mobile */}
@@ -102,6 +105,52 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className='text-3xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mb-5  mt-10 md:mt-15 lg:mt-20'>
+        The full product development stack.
+      </div>
+      <div className='text-gray-600 text-center mt-4 lg:w-[70%] md:w-[80%] w-[98%] mx-auto'>
+        From designing the interface to implementing your fully featured application - I can provide the full product design process from an idea to a finished hiqh quality app, polished with fantastic design and running on state of the art software.
+      </div>
+
+      {/* <Spacer  height={'20px'} className="h-8 md:h-12 lg:h-16" /> */}
+      <Spacer className="lg:h-20 h-10" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 lg:w-[70%] md:w-[80%] w-[98%] mx-auto">
+
+
+        {/* Card 1 */}
+        <FeatureCard
+          iconClass="fas fa-mobile-alt"
+          title="Mobile App Development"
+          description="Developing cross-platform mobile applications with great performance and elegant UI."
+          circleAvatarBgColor="#0bc5ea"
+        />
+
+        {/* Card 2 */}
+        <FeatureCard
+          iconClass="fas fa-server"
+          title="Backend Development"
+          description="Building robust and scalable backend systems with modern technologies."
+          circleAvatarBgColor="#ed8936"
+        />
+
+        {/* Card 3 */}
+        <FeatureCard
+          iconClass="fas fa-paint-brush"
+          title="UI/UX Design"
+          description="Creating intuitive and beautiful user interfaces with great user experience."
+          circleAvatarBgColor="#9f7aea"
+        />
+
+        {/* Card 4 */}
+        <FeatureCard
+          iconClass="fas fa-database"
+          title="Database Management"
+          description="Ensuring data integrity, security, and performance with optimized database solutions."
+          circleAvatarBgColor="#38b2ac"
+        />
+      </div>
+
     </div >
   );
 }

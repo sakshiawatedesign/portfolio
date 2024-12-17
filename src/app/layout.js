@@ -94,22 +94,12 @@ export default function RootLayout({ children }) {
                 </li>
                 <li>
                   <Link
-                    href="/about"
+                    href="/projects"
                     onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blogs"
-                    onClick={toggleMenu}
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
-                    style={{ color: themeColors.primaryText }}
-                  >
-                    Blogs
+                    Projects
                   </Link>
                 </li>
                 <li>
@@ -122,6 +112,17 @@ export default function RootLayout({ children }) {
                     Experience
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/blogs"
+                    onClick={toggleMenu}
+                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    style={{ color: themeColors.primaryText }}
+                  >
+                    Blogs
+                  </Link>
+                </li>
+
                 <li>
                   <Link
                     href="/contact"
@@ -198,20 +199,11 @@ export default function RootLayout({ children }) {
                 </li>
                 <li>
                   <Link
-                    href="/about"
+                    href="/projects"
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blogs"
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
-                    style={{ color: themeColors.primaryText }}
-                  >
-                    Blogs
+                    Projects
                   </Link>
                 </li>
                 <li>
@@ -223,6 +215,16 @@ export default function RootLayout({ children }) {
                     Experience
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/blogs"
+                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    style={{ color: themeColors.primaryText }}
+                  >
+                    Blogs
+                  </Link>
+                </li>
+
                 <li>
                   <Link
                     href="/contact"

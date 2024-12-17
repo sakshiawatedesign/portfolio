@@ -7,11 +7,11 @@ export default function SocialIcons() {
     { id: 3, href: '#', icon: 'fa-github' },
     { id: 4, href: '#', icon: 'fa-instagram' },
     { id: 5, href: '#', icon: 'fa-youtube' },
-    { id: 6, href: '#', icon: 'fa-envelope' }, // fas = FontAwesome Solid
+    { id: 6, href: '#', icon: 'fa-envelope' },
   ];
 
   return (
-    <div className="flex space-x-5 mt-4">
+    <div className="flex space-x-2 mt-4">
       {icons.map(({ id, href, icon }) => (
         <a
           key={id}
@@ -20,7 +20,7 @@ export default function SocialIcons() {
           rel="noopener noreferrer"
           className="group"
         >
-          <div className="bg-gray-100 border border-gray-300 px-2 py-1 rounded-lg shadow-md transition-transform duration-300 ease-in-out group-hover:translate-y-[-5px]">
+          <div className="bg-[#edf2f7] border border-gray-300 px-3 py-2 rounded-lg  transition-transform duration-300 ease-in-out group-hover:translate-y-[-5px]">
             <i className={`fab ${icon} text-black-500 text-md group-hover:text-gray-900`} />
           </div>
         </a>
