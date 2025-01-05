@@ -1,6 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import themeColors from '@/lib/theme-colors'; // Adjust the import path accordingly
+import { useRouter } from 'next/navigation';
 
 const ProjectCard = ({
   title,
@@ -8,9 +9,25 @@ const ProjectCard = ({
   techStack,
   imageUrl,
   actionButtons,
+  path
 }) => {
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    console.log(`path: ${path}`);
+    router.push(`/projects/${path}`);
+  };
+
+  const handleButtonClick = (e, link) => {
+    e.stopPropagation();
+    window.open(link, '_blank');
+  };
+
   return (
-    <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+    <div
+      className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="w-full h-48 p-4 overflow-hidden">
         <img
           src={imageUrl}
@@ -27,10 +44,10 @@ const ProjectCard = ({
         </div>
       </div>
       <div className="flex justify-around p-4 pt-2">
-        {actionButtons.map((button, index) => (
-          <a
-            key={index}
-            href={button.link}
+        {actionButtons.map((button, idx) => (
+          <button
+            key={idx}
+            onClick={(e) => handleButtonClick(e, button.link)}
             title={button.title}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors flex items-center"
           >
@@ -39,7 +56,7 @@ const ProjectCard = ({
               alt={button.title}
               className="w-6 h-6 object-contain"
             />
-          </a>
+          </button>
         ))}
       </div>
     </div>

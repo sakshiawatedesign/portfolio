@@ -153,7 +153,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
-        <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-40">
+        <header className="fixed top-0 left-0 right-0 bg-white z-40">
           <nav className="container mx-auto flex justify-between items-center p-4">
             {/* Logo */}
             <div className="text-xl font-bold">
