@@ -136,9 +136,9 @@ export default function Home() {
 
         {/* Card 3 */}
         <FeatureCard
-          iconClass="fas fa-paint-brush"
-          title="UI/UX Design"
-          description="Creating intuitive and beautiful user interfaces with great user experience."
+          iconClass="fas fa-code"
+          title="Data Structures & Algorithms"
+          description="Mastering fundamental data structures and algorithms to build efficient and optimized solutions."
           circleAvatarBgColor="#9f7aea"
         />
 

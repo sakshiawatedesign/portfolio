@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased relative`}>
+      <body className={`${poppins.variable} antialiased relative pt-16`}>
         {/* Mobile Menu - Add animation classes */}
         <div
           ref={menuRef}
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
               style={{ color: "#2c7a7b" }}
               aria-label="Close Menu"
             >
-              &#x2715; {/* Close symbol */}
+              &#x2715;
             </button>
 
             <div className="flex flex-col items-center space-y-4 py-6 pt-12">
@@ -122,7 +122,6 @@ export default function RootLayout({ children }) {
                     Blogs
                   </Link>
                 </li>
-
                 <li>
                   <Link
                     href="/contact"
@@ -140,28 +139,11 @@ export default function RootLayout({ children }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {/* <button
-                    onClick={toggleMenu}
-                    className="px-4 py-2 border-2 text-bold rounded-md bg-white transition duration-300 hover:bg-[#dfeded]"
-                    style={{
-                      color: themeColors.primaryText,
-                      borderColor: themeColors.primaryText,
-                    }}
-                  >
-                    GitHub
-                  </button> */}
-
                   <OutLinedBtn
                     onClick={toggleMenu}
                     text="GitHub"
                   />
                 </a>
-                {/* <button
-                  onClick={toggleMenu}
-                  className="px-4 py-2 rounded-md text-white bg-gradient-to-r from-[#319795] to-[#46b97a] transition duration-300 hover:from-[#225756] hover:to-[#225756]"
-                >
-                  Resume
-                </button> */}
                 <GradientBtn
                   text="Resume"
                   onClick={toggleMenu}
@@ -171,8 +153,8 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
-        <header className="text-white p-4">
-          <nav className="container mx-auto flex justify-between items-center">
+        <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-40">
+          <nav className="container mx-auto flex justify-between items-center p-4">
             {/* Logo */}
             <div className="text-xl font-bold">
               <a href="/">
@@ -224,7 +206,6 @@ export default function RootLayout({ children }) {
                     Blogs
                   </Link>
                 </li>
-
                 <li>
                   <Link
                     href="/contact"
@@ -247,21 +228,15 @@ export default function RootLayout({ children }) {
                     text="GitHub"
                   />
                 </a>
-                {/* <button
-                  className="px-4 py-2 rounded-md text-white bg-gradient-to-r from-[#319795] to-[#46b97a] transition duration-300 hover:from-[#225756] hover:to-[#225756]"
-                >
-                  Resume
-                </button> */}
                 <GradientBtn
                   text="Resume"
                 />
-
               </div>
             </div>
 
             {/* Mobile Hamburger Icon */}
             <button
-              className="md:hidden absolute top-4 right-4 z-60 text-black text-3xl"
+              className="md:hidden absolute top-6 right-4 z-60 text-black text-3xl"
               onClick={toggleMenu}
               aria-label="Toggle Menu"
             >
@@ -282,7 +257,9 @@ export default function RootLayout({ children }) {
             </button>
           </nav>
         </header>
-        {children}
+        <main className="pt-8">
+          {children}
+        </main>
       </body>
     </html>
   );
