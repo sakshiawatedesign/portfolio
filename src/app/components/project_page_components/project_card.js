@@ -37,7 +37,7 @@ const ProjectCard = ({
       </div>
       <div className="p-4 space-y-3 flex-1">
         <h2 className="text-xl font-bold text-gray-800 text-center">{title}</h2>
-        <p className="text-gray-600 text-sm line-clamp-5">{description}</p>
+        <p className="text-gray-600 text-sm line-clamp-6">{description}</p>
         <div>
           <p className="text-sm font-medium text-gray-700 mb-1">Tech Stack:</p>
           <p className="text-gray-600 text-sm">{techStack}</p>

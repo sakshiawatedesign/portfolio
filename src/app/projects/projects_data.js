@@ -1,86 +1,81 @@
 const projectsData = [
     {
-        title: "Nike Clone",
-        path: 'nike-clone',
+        title: "Uponly one",
+        path: 'uponly-one',
         description:
-            "It's my major project where I've used MERN stack to make the clone of Nike website along with backend integration and payment gateway integration with all the features of an e-commerce website.",
-        techStack: "React, Redux, JavaScript, Chakra UI, CSS, NodeJS, Express, MongoDB, Razorpay",
-        imageUrl: "/icons/call.png",
+            "SaaS platform with a robust HRMS for attendance, leave, expense tracking, and daily salary insights, alongside LMS and Sales CRM for lead and task management—streamlining processes and reducing costs while empowering business growth.",
+        techStack: "Flutter, Firebase, Php, Mysql",
+        imageUrl: "/banners/uponly_one.png",
         actionButtons: [
             {
-                icon: "/icons/call.png",
-                link: "https://demo-link.com",
-                title: "Watch Demo"
+                icon: "/icons/playstore.png",
+                link: "https://play.google.com/store/apps/details?id=com.uponly.uponly&hl=en",
+                title: "Play Store"
             },
             {
-                icon: "/icons/call.png",
-                link: "https://preview-link.com",
-                title: "Live Preview"
-            },
-            {
-                icon: "/icons/call.png",
-                link: "https://github.com/your-repo",
-                title: "View Code"
+                icon: "/icons/appstore.png",
+                link: "https://apps.apple.com/in/app/uponly/id6444430010",
+                title: "App Store"
             }
         ]
     },
     {
-        title: "Todo App",
-        path: 'todo-app',
-        description:
-            "A fully responsive Todo App built using React and Redux Toolkit, featuring CRUD operations and user authentication.",
-        techStack: "React, Redux Toolkit, Tailwind CSS, Firebase",
-        imageUrl: "/icons/call.png",
-        actionButtons: [
-            {
-                icon: "/icons/call.png",
-                link: "https://todo-demo-link.com",
-                title: "Watch Demo"
-            },
-            {
-                icon: "/icons/call.png",
-                link: "https://github.com/todo-repo",
-                title: "View Code"
-            }
-        ]
-    },
-    {
-        title: "Portfolio Website",
+        title: "Uponly pro",
 
-        path: 'portfolio-website',
+        path: 'Uponly-pro',
         description:
             "A personal portfolio website showcasing my skills, projects, and achievements, built with React and styled with Tailwind CSS.",
-        techStack: "React, Tailwind CSS, JavaScript",
+        techStack: "Flutter, Firebase, Gen-AI, Php, Mysql",
         imageUrl: "/icons/call.png",
         actionButtons: [
             {
-                icon: "/icons/call.png",
-                link: "https://portfolio-preview-link.com",
-                title: "Live Preview"
+                icon: "/icons/playstore.png",
+                link: "https://play.google.com/store/apps/details?id=com.uponlytech.pro&hl=en",
+                title: "Play Store"
             },
             {
-                icon: "/icons/call.png",
-                link: "https://github.com/portfolio-repo",
-                title: "View Code"
+                icon: "/icons/appstore.png",
+                link: "https://apps.apple.com/in/app/uponly-pro/id6445836709",
+                title: "App Store"
             }
         ]
     },
     {
-        title: "Weather App",
-        path: 'weather-app',
+        title: "Easy Ride",
+        path: 'easy-ride',
         description:
-            "A weather application that provides real-time weather updates for any location. Built with React and integrated with OpenWeather API.",
-        techStack: "React, OpenWeather API, CSS",
+            "Carpool-based mobility platform connecting passengers and drivers for affordable, eco-friendly rides. Features include seamless ride-sharing, real-time tracking, in-app chat, and multi-vehicle options, fostering a community-driven transportation ecosystem.",
+        techStack: "Flutter, NodeJs, MongoDB, Firebase, Google Maps API",
         imageUrl: "/icons/call.png",
         actionButtons: [
             {
-                icon: "/icons/call.png",
-                link: "https://weather-demo-link.com",
-                title: "Live Preview"
+                icon: "/icons/github.png",
+                link: "https://github.com/ArunVishwakarma30/easy_ride_ui/",
+                title: "View Code"
             },
+            // {
+            //     icon: "/icons/call.png",
+            //     link: "https://preview-link.com",
+            //     title: "Live Preview"
+            // },
+            // {
+            //     icon: "/icons/call.png",
+            //     link: "https://github.com/your-repo",
+            //     title: "View Code"
+            // }
+        ]
+    },
+    {
+        title: "Anime Gallery",
+        path: 'amnime-gallery',
+        description:
+            "----------------------------------------",
+        techStack: "Java, Android studio, Firebase, REST API",
+        imageUrl: "/icons/call.png",
+        actionButtons: [
             {
-                icon: "/icons/call.png",
-                link: "https://github.com/weather-repo",
+                icon: "/icons/github.png",
+                link: "https://github.com/ArunVishwakarma30/easy_ride_ui/",
                 title: "View Code"
             }
         ]
