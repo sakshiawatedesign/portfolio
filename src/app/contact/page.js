@@ -22,9 +22,9 @@ const ContactPage = () => {
         e.preventDefault();
 
         // TODO: Update with your service ID here --> https://dashboard.emailjs.com/
-        const serviceId = 'test_id';  // these three view in whatsapp private message
-        const templateId = 'test_id';
-        const publicKey = 'test_id';
+        const serviceId = 'service_m72gv1d';  // these three view in whatsapp private message
+        const templateId = 'template_6u9r7zn';
+        const publicKey = 'xYo5uX5W2JJkrjjvD';
 
         emailjs.send(serviceId, templateId, {
             to_name: 'Arun Vishwakarma',
@@ -95,7 +95,7 @@ const ContactPage = () => {
                             onChange={handleChange}
                             rows={4}
                             className="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2b6cb0] focus:border-[#2b6cb0]"
-                            placeholder="Your Message"
+                            placeholder="Hey there! Let's connect"
                         />
                     </div>
                     {status && (
