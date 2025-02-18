@@ -26,7 +26,7 @@ const ExperiencePage = () => {
                 "Implemented robust state management using GetX state management for scalable app architecture",
                 "Collaborated closely with cross-functional teams to deliver high-quality products within tight deadlines",
             ],
-            techStack: ["Flutter", 'Php', 'Mysql', "Firebase", "GetX"],
+            techStack: ["Flutter", 'Php', 'Mysql', "Firebase", "GetX", "Google Maps API"],
         },
         // {
         //     id: 2,
@@ -129,8 +129,8 @@ const ExperiencePage = () => {
                                         {exp.techStack.map((tech, i) => (
                                             <span
                                                 key={i}
-                                                className="px-4 py-2 bg-[#e1ebeb] text-primaryText font-bold rounded-xl shadow-sm border border-[#cde3e4] text-xs"
-                                                style={{ backgroundColor: themeColors.iconBg }}
+                                                className="px-4 py-2 bg-[#e1ebeb] font-bold rounded-xl shadow-sm border border-[#cde3e4] text-xs"
+                                                style={{ backgroundColor: themeColors.iconBg, color: themeColors.secondaryText }}
                                             >
                                                 {tech}
                                             </span>

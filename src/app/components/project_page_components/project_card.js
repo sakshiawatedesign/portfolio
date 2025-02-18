@@ -14,8 +14,8 @@ const ProjectCard = ({
   const router = useRouter();
 
   const handleCardClick = () => {
-    console.log(`path: ${path}`);
-    router.push(`/projects/${path}`);
+    // console.log(`path: ${path}`);
+    // router.push(`/projects/${path}`);
   };
 
   const handleButtonClick = (e, link) => {
@@ -25,7 +25,7 @@ const ProjectCard = ({
 
   return (
     <div
-      className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col cursor-pointer"
+      className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col"
       onClick={handleCardClick}
     >
       <div className="w-full h-48 p-4 overflow-hidden">
@@ -39,8 +39,28 @@ const ProjectCard = ({
         <h2 className="text-xl font-bold text-gray-800 text-center">{title}</h2>
         <p className="text-gray-600 text-sm line-clamp-6">{description}</p>
         <div>
-          <p className="text-sm font-medium text-gray-700 mb-1">Tech Stack:</p>
-          <p className="text-gray-600 text-sm">{techStack}</p>
+          <p className="text-sm font-medium text-gray-700 mb-2">Tech Stack</p>
+          <div className="flex flex-wrap gap-2">
+            {Array.isArray(techStack) ? (
+              techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 rounded-[6px] text-xs font-medium bg-gray-100 border border-gray-300"
+                >
+                  {tech}
+                </span>
+              ))
+            ) : (
+              techStack.split(',').map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 rounded-[10px] text-xs font-medium bg-gray-100 border border-gray-300"
+                >
+                  {tech.trim()}
+                </span>
+              ))
+            )}
+          </div>
         </div>
       </div>
       <div className="flex justify-around p-4 pt-2">

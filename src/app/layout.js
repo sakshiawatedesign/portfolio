@@ -114,12 +114,12 @@ export default function RootLayout({ children }) {
                 </li>
                 <li>
                   <Link
-                    href="/blogs"
+                    href="/skills"
                     onClick={toggleMenu}
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
-                    Blogs
+                    Skills
                   </Link>
                 </li>
                 <li>
@@ -199,11 +199,11 @@ export default function RootLayout({ children }) {
                 </li>
                 <li>
                   <Link
-                    href="/blogs"
+                    href="/skills"
                     className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
-                    Blogs
+                    Skills
                   </Link>
                 </li>
                 <li>
