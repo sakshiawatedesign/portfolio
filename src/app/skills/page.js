@@ -1,16 +1,26 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHtml5, faCss3Alt, faJs, faFlutter, faNode, faPhp, faGithub, faGit, faFigma, faAndroid, faApple, faGoogle, faLaravel } from '@fortawesome/free-brands-svg-icons';
+import { faServer, faMapMarkedAlt, faCode, faToolbox, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import themeColors from "../../lib/theme-colors";
 
-const SkillSection = ({ title, skills }) => (
-  <div className="p-6 rounded-2xl border border-[#e5e7eb] bg-white shadow-sm hover:shadow-md transition-shadow text-center">
-    <h2 className="text-2xl font-semibold mb-6 text-[#2c7a7b]">{title}</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center">
+const SkillSection = ({ title, skills, gradient }) => (
+  <div className={`p-6 rounded-2xl border border-gray-200 bg-gradient-to-br ${gradient} shadow-lg hover:shadow-xl transition-all duration-300 text-center transform hover:-translate-y-1`}>
+    <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white drop-shadow-md">
+      {title}
+    </h2>
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
       {skills.map((skill) => (
         <div
           key={skill.name}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#edf2f7] hover:bg-gray-200 transition-colors justify-center"
+          className="flex items-center gap-2 px-2 py-2 rounded-full bg-white/95 hover:bg-white transition-all duration-200 justify-center shadow-sm hover:shadow-md group"
         >
-          <span className="w-6 h-6">{skill.icon}</span>
-          <span className="text-[#4c515a] font-medium">{skill.name}</span>
+          <span className="w-6 h-6 flex items-center justify-center transform group-hover:scale-110 transition-transform flex-shrink-0">
+            {skill.icon}
+          </span>
+          <span className="text-gray-700 font-medium text-xs sm:text-sm md:text-base group-hover:text-teal-500 truncate">
+            {skill.name}
+          </span>
         </div>
       ))}
     </div>
@@ -19,44 +29,67 @@ const SkillSection = ({ title, skills }) => (
 
 function SkillsPage() {
   const frontendSkills = [
-    { name: 'React Js', icon: <img src="/react-icon.svg" alt="React" className="w-5 h-5" /> },
-    { name: 'Redux', icon: <img src="/redux-icon.svg" alt="Redux" className="w-5 h-5" /> },
-    { name: 'HTML', icon: <img src="/html-icon.svg" alt="HTML" className="w-5 h-5" /> },
-    { name: 'CSS', icon: <img src="/css-icon.svg" alt="CSS" className="w-5 h-5" /> },
-    { name: 'JavaScript', icon: <img src="/js-icon.svg" alt="JavaScript" className="w-5 h-5" /> },
-    { name: 'Bootstrap', icon: <img src="/bootstrap-icon.svg" alt="Bootstrap" className="w-5 h-5" /> },
-    { name: 'Material UI', icon: <img src="/mui-icon.svg" alt="Material UI" className="w-5 h-5" /> },
+    { name: 'Flutter', icon: <FontAwesomeIcon icon={faFlutter} className="text-blue-500" /> },
+    { name: 'Material UI', icon: <FontAwesomeIcon icon={faGoogle} className="text-blue-400" /> },
+    { name: 'Cupertino', icon: <FontAwesomeIcon icon={faApple} className="text-gray-500" /> },
+    { name: 'XML', icon: <FontAwesomeIcon icon={faAndroid} className="text-green-500" /> },
+    { name: 'HTML', icon: <FontAwesomeIcon icon={faHtml5} className="text-orange-600" /> },
+    { name: 'CSS', icon: <FontAwesomeIcon icon={faCss3Alt} className="text-blue-600" /> },
+    { name: 'BLoc', icon: <FontAwesomeIcon icon={faToolbox} className="text-gray-700" /> },
+    { name: 'GetX', icon: <FontAwesomeIcon icon={faToolbox} className="text-gray-700" /> },
+    { name: 'Provider', icon: <FontAwesomeIcon icon={faToolbox} className="text-gray-700" /> },
+    { name: 'Riverpod', icon: <FontAwesomeIcon icon={faToolbox} className="text-gray-700" /> },
+  ];
+
+  const backendSkills = [
+    { name: 'Node.js', icon: <FontAwesomeIcon icon={faNode} className="text-green-500" /> },
+    { name: 'Express.js', icon: <FontAwesomeIcon icon={faServer} className="text-gray-600" /> },
+    { name: 'Php', icon: <FontAwesomeIcon icon={faPhp} className="text-indigo-600" /> },
+    { name: 'Rest API', icon: <FontAwesomeIcon icon={faServer} className="text-gray-600" /> },
+    { name: 'Google Maps API', icon: <FontAwesomeIcon icon={faMapMarkedAlt} className="text-red-500" /> },
   ];
 
   const databaseSkills = [
-    { name: 'MySQL', icon: <img src="/mysql-icon.svg" alt="MySQL" className="w-5 h-5" /> },
-    { name: 'Mongo DB', icon: <img src="/mongodb-icon.svg" alt="MongoDB" className="w-5 h-5" /> },
+    { name: 'MongoDB', icon: <FontAwesomeIcon icon={faDatabase} className="text-green-700" /> },
+    { name: 'Firebase', icon: <FontAwesomeIcon icon={faDatabase} className="text-yellow-600" /> },
+    { name: 'MySQL', icon: <FontAwesomeIcon icon={faDatabase} className="text-blue-700" /> },
+    { name: 'Supabase', icon: <FontAwesomeIcon icon={faDatabase} className="text-teal-500" /> },
   ];
 
   const otherSkills = [
-    { name: 'Git', icon: <img src="/git-icon.svg" alt="Git" className="w-5 h-5" /> },
-    { name: 'GitHub', icon: <img src="/github-icon.svg" alt="GitHub" className="w-5 h-5" /> },
-    { name: 'VS Code', icon: <img src="/vscode-icon.svg" alt="VS Code" className="w-5 h-5" /> },
-    { name: 'Postman', icon: <img src="/postman-icon.svg" alt="Postman" className="w-5 h-5" /> },
+    { name: 'Git', icon: <FontAwesomeIcon icon={faGit} className="text-orange-600" /> },
+    { name: 'GitHub', icon: <FontAwesomeIcon icon={faGithub} className="text-black" /> },
+    { name: 'Postman', icon: <FontAwesomeIcon icon={faToolbox} className="text-orange-500" /> },
+    { name: 'Figma', icon: <FontAwesomeIcon icon={faFigma} className="text-pink-500" /> },
+    { name: 'Android Studio', icon: <FontAwesomeIcon icon={faAndroid} className="text-green-500" /> },
   ];
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] p-6 flex items-center justify-center">
-      <div className="max-w-6xl mx-auto space-y-6 text-center">
-        <h1 className="text-4xl font-bold text-[#111827] mb-8">My Skills</h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Frontend Section */}
-          <SkillSection title="Frontend" skills={frontendSkills} />
-
-          {/* Database Section */}
-          <SkillSection title="Database" skills={databaseSkills} />
-        </div>
-
-        {/* Others Section - Full Width */}
-        <div className="col-span-full md:w-[60%] mx-auto">
-          <SkillSection title="Others" skills={otherSkills} />
-        </div>
+    <div className="min-h-screen flex flex-col items-center py-4 overflow-hidden">
+      <h1 className="text-3xl font-bold md:mb-8 mb-4 text-center"
+        style={{ color: themeColors.primaryText }}
+      >My Skills</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl px-4 md:px-0">
+        <SkillSection
+          title="Frontend"
+          skills={frontendSkills}
+          gradient="from-teal-300 to-cyan-200"
+        />
+        <SkillSection
+          title="Backend"
+          skills={backendSkills}
+          gradient="from-indigo-300 to-purple-200"
+        />
+        <SkillSection
+          title="Database"
+          skills={databaseSkills}
+          gradient="from-green-300 to-emerald-200"
+        />
+        <SkillSection
+          title="Others"
+          skills={otherSkills}
+          gradient="from-orange-300 to-rose-200"
+        />
       </div>
     </div>
   );

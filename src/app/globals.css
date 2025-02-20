@@ -108,3 +108,30 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Replace your animation styles in globals.css */
+.animate-on-scroll {
+  opacity: 0;
+  /* Don't use scale in the default animation - just use translateY */
+  transform: translateY(30px);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.animate-on-scroll[data-direction="right"] {
+  transform: translateX(30px);
+}
+
+.animate-on-scroll[data-direction="left"] {
+  transform: translateX(-30px);
+}
+
+.animate-on-scroll[data-direction="down"] {
+  transform: translateY(-30px);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
