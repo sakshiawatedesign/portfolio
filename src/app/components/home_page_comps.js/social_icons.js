@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function SocialIcons() {
   const icons = [
     { id: 1, href: 'tel:+919867559183', src: '/icons/call.png', alt: 'Mobile Number' }, // Phone call
@@ -11,7 +14,7 @@ export default function SocialIcons() {
   return (
     <div className="flex space-x-2 mt-4">
       {icons.map(({ id, href, src, alt }) => (
-        <a
+        <Link
           key={id}
           href={href}
           target="_blank"
@@ -19,14 +22,15 @@ export default function SocialIcons() {
           className="group"
         >
           <div className="bg-[#edf2f7] border border-gray-300 px-3 py-2 rounded-lg transition-transform duration-300 ease-in-out group-hover:translate-y-[-5px]">
-            <img
-              href={href}
+            <Image
               src={src}
               alt={alt}
+              width={24}
+              height={24}
               className="h-6 w-6 group-hover:opacity-80 transition-opacity duration-300"
             />
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
