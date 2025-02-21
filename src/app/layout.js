@@ -214,7 +214,7 @@ export default function RootLayout({ children }) {
                 </li>
               </ul>
               <div className="flex space-x-4">
-                <a
+                <Link
                   href="https://github.com/ArunVishwakarma30"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -223,7 +223,7 @@ export default function RootLayout({ children }) {
                     onClick={toggleMenu}
                     text="GitHub"
                   />
-                </a>
+                </Link>
                 <GradientBtn
                   text="Resume"
                   onClick={toggleMenu}
@@ -237,14 +237,14 @@ export default function RootLayout({ children }) {
           <nav className="container mx-auto flex justify-between items-center p-4">
             {/* Logo */}
             <div className="text-xl font-bold">
-              <a href="/">
+              <Link href="/">
                 <Image
                   src="/portfolio_logo.svg"
                   alt="Portfolio Logo"
                   width={43}
                   height={43}
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation and Buttons */}
@@ -299,7 +299,7 @@ export default function RootLayout({ children }) {
 
               {/* Desktop Buttons */}
               <div className="hidden md:flex space-x-4">
-                <a
+                <Link
                   href="https://github.com/ArunVishwakarma30"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -307,7 +307,7 @@ export default function RootLayout({ children }) {
                   <OutLinedBtn
                     text="GitHub"
                   />
-                </a>
+                </Link>
                 <GradientBtn
                   text="Resume"
                 />
