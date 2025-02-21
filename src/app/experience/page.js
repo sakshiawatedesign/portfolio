@@ -57,7 +57,7 @@ const ExperiencePage = () => {
 
 
     return (
-        <div className="min-h-screen bg-scaffold  md:p-6 px-6 md:p-8">
+        <div className="min-h-screen bg-scaffold mt:3 md:p-6 px-6 md:p-8">
             <h1 className="text-3xl font-bold  md:mb-8 mb-4 text-center"
                 style={{ color: themeColors.primaryText }}
             >Work Experience</h1>
