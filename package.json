@@ -5,7 +5,7 @@
   "scripts": {
     "real-dev": "next dev",
     "dev": "next dev -H 0.0.0.0 -p 3000",
-    "build": "next build || true",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
