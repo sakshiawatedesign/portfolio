@@ -7,7 +7,7 @@ export default function SocialIcons() {
     { id: 2, href: 'mailto:arunvishwakarma3009@gmail.com', src: '/icons/email.png', alt: 'Email' },
     { id: 3, href: 'https://www.linkedin.com/in/arun-vishwakarma30', src: '/icons/linkedin.png', alt: 'LinkedIn' },
     { id: 4, href: 'https://github.com/ArunVishwakarma30', src: '/icons/github.png', alt: 'GitHub' },
-    { id: 5, href: 'https://www.instagram.com/_arun__30/', src: '/icons/instagram.png', alt: 'Instagram' },
+    // { id: 5, href: 'https://www.instagram.com/_arun__30/', src: '/icons/instagram.png', alt: 'Instagram' },
     // { id: 7, href: 'https://x.com/?lang=en', src: '/icons/twitter.png', alt: 'Twitter' },
   ];
 

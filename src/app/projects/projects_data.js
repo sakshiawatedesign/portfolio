@@ -1,10 +1,12 @@
-
 const projectsData = [
     {
         title: "Uponly one",
         path: 'uponly-one',
-        description:
-            "SaaS platform with a robust HRMS for attendance, leave, expense tracking, and daily salary insights, alongside LMS and Sales CRM for lead and task management—streamlining processes and reducing costs while empowering business growth.",
+        description: [
+            "Manages attendance, leave, expenses, and daily salary insights.",
+            "Includes an LMS for employee training and development.",
+            "Features a Sales CRM for lead tracking and task management.",
+        ],
         techStack: "Flutter, Firebase, Php, Mysql",
         imageUrl: "/banners/uponly_one.png",
         actionButtons: [
@@ -22,12 +24,14 @@ const projectsData = [
     },
     {
         title: "Uponly pro",
-
         path: 'Uponly-pro',
-        description:
-            "A personal portfolio website showcasing my skills, projects, and achievements, built with React and styled with Tailwind CSS.",
+        description: [
+            "Users can track their investments, including assets and liability coverage.",
+            "The app allows purchasing various health insurance plans and mutual funds.",
+            "It helps in financial planning for better money management."
+        ],
         techStack: "Flutter, Firebase, Gen-AI, Php, Mysql",
-        imageUrl: "/icons/call.png",
+        imageUrl: "/banners/uponly_pro.png",
         actionButtons: [
             {
                 icon: "/icons/playstore.png",
@@ -44,35 +48,12 @@ const projectsData = [
     {
         title: "Easy Ride",
         path: 'easy-ride',
-        description:
-            "Carpool-based mobility platform connecting passengers and drivers for affordable, eco-friendly rides. Features include seamless ride-sharing, real-time tracking, in-app chat, and multi-vehicle options, fostering a community-driven transportation ecosystem.",
+        description: [
+            "Easy Ride connects riders with nearby drivers for quick and reliable transportation",
+            "Users can track their rides in real-time with live location updates.",
+            "The app offers safety features like driver details and ride-sharing options.",],
         techStack: "Flutter, NodeJs, MongoDB, Firebase, Google Maps API",
-        imageUrl: "/icons/call.png",
-        actionButtons: [
-            {
-                icon: "/icons/github.png",
-                link: "https://github.com/ArunVishwakarma30/easy_ride_ui/",
-                title: "View Code"
-            },
-            // {
-            //     icon: "/icons/call.png",
-            //     link: "https://preview-link.com",
-            //     title: "Live Preview"
-            // },
-            // {
-            //     icon: "/icons/call.png",
-            //     link: "https://github.com/your-repo",
-            //     title: "View Code"
-            // }
-        ]
-    },
-    {
-        title: "Anime Gallery",
-        path: 'amnime-gallery',
-        description:
-            "----------------------------------------",
-        techStack: "Java, Android studio, Firebase, REST API",
-        imageUrl: "/icons/call.png",
+        imageUrl: "/banners/easy_ride.png",
         actionButtons: [
             {
                 icon: "/icons/github.png",
@@ -80,7 +61,25 @@ const projectsData = [
                 title: "View Code"
             }
         ]
-    }
+    },
+    // {
+    //     title: "Anime Gallery",
+    //     path: 'amnime-gallery',
+    //     description: [
+    //         "Comprehensive anime database with advanced filtering and search functionality",
+    //         "Personalized watchlist and recommendation engine based on user preferences",
+    //         "Interactive community features including ratings, reviews, and discussion forums"
+    //     ],
+    //     techStack: "Java, Android studio, Firebase, REST API",
+    //     imageUrl: "/icons/call.png",
+    //     actionButtons: [
+    //         {
+    //             icon: "/icons/github.png",
+    //             link: "https://github.com/ArunVishwakarma30/easy_ride_ui/",
+    //             title: "View Code"
+    //         }
+    //     ]
+    // }
 ];
 
 export default projectsData;

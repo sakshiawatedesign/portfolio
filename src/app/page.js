@@ -7,6 +7,7 @@ import GradientBtn from "./components/common_copmps.js/gradient_btn";
 import Spacer from "./components/common/spacer";
 import FeatureCard from './components/home_page_comps.js/featured_card';
 import AnimateOnScroll from './components/AnimateOnScroll';
+import Image from 'next/image';
 
 export default function Home() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -52,14 +53,14 @@ export default function Home() {
         </div>
       </AnimateOnScroll>
 
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between py-6 px-3">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between py-4 md:py-6 px-3">
         {/* Content Column - First wrap just the content */}
         <div className="w-full md:w-[65%] text-start">
           <AnimateOnScroll delay={200} duration={1200}>
             <div> {/* Extra wrapper div to contain animated content */}
               {/* Main Heading - Smaller text on mobile */}
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                I&apos;m <span className="gradient-text">Arun Vishwakarma,</span> <br />
+                I'm <span className="gradient-text">Arun Vishwakarma,</span> <br />
                 <span>Mobile</span> <span className="gradient-text">App Developer</span> <br />
                 <span>both</span> <span className="gradient-text">Android</span> <br />
                 <span>and</span> <span className="gradient-text">IOS</span> <br />
@@ -75,14 +76,17 @@ export default function Home() {
               </p>
 
               {/* Buttons */}
-              <div className="mt-6 md:mt-8 flex space-x-4">
+              <div className="mt-4 md:mt-8 flex space-x-4">
                 <OutLinedBtn text={"Hire me"} onClick={redirectToEmail} />
 
                 <div>
                   {isLargeScreen ? (
-                    <GradientBtn text={"View Projects"} onClick={() => { }} />
+                    <GradientBtn text={"View Projects"} onClick={() => window.location.href = '/projects'} />
                   ) : (
-                    <GradientBtn text={"View CV"} onClick={() => { }} />
+                    <GradientBtn
+                      text={"View CV"}
+                      onClick={() => window.open('/arunResume.pdf', '_blank')}
+                    />
                   )}
                 </div>
               </div>
@@ -96,8 +100,22 @@ export default function Home() {
         {/* Image Column */}
         <div className="w-full md:w-[35%] mb-6 md:mb-0 md:ml-6">
           <AnimateOnScroll delay={300} duration={1200} direction="right">
-            <div className="bg-gray-200 h-64 md:h-96 flex items-center justify-center">
-              Image Here
+            <div className="aspect-square relative">  {/* This ensures width and height are equal */}
+              <div className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, #319795 0%, #46b97a 100%)',
+                  padding: '4px'  // This creates the border thickness
+                }}
+              >  {/* This wrapper helps maintain the circular shape */}
+                <Image
+                  src="/profile-img.jpg"
+                  alt="Arun Vishwakarma"
+                  fill
+                  priority
+                  className="rounded-full object-cover p-1"
+                  sizes="(max-width: 768px) 100vw, 35vw"
+                />
+              </div>
             </div>
           </AnimateOnScroll>
         </div>

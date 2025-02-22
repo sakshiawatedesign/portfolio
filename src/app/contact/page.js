@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -9,6 +8,7 @@ const ContactPage = () => {
         message: ''
     });
     const [status, setStatus] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,29 +18,38 @@ const ContactPage = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
+        setStatus('');
 
-        // TODO: Update with your service ID here --> https://dashboard.emailjs.com/
-        const serviceId = 'service_m72gv1d';  // these three view in whatsapp private message
-        const templateId = 'template_6u9r7zn';
-        const publicKey = 'xYo5uX5W2JJkrjjvD';
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message
+                }),
+            });
 
-        emailjs.send(serviceId, templateId, {
-            to_name: 'Arun Vishwakarma',
-            from_name: formData.name,
-            from_email: formData.email,
-            message: formData.message,
-            to_email: 'arunvishwakarma3009@gmail.com'
-        }, publicKey)
-            .then(() => {
+            const data = await response.json();
+            
+            if (response.ok) {
                 setStatus('Message sent successfully!');
                 setFormData({ name: '', email: '', message: '' });
-            })
-            .catch((error) => {
-                setStatus('Failed to send message. Please try again.');
-                console.error('Email send error:', error);
-            });
+            } else {
+                setStatus(`Failed to send message: ${data.error || 'Unknown error'}`);
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+            setStatus('Failed to send message. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -106,9 +115,20 @@ const ContactPage = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full py-3 px-6 text-white bg-[#2c7a7b] rounded-lg shadow-md hover:bg-[#265f62] transition duration-300"
+                            disabled={isLoading}
+                            className="w-full py-3 px-6 text-white bg-[#2c7a7b] rounded-lg shadow-md hover:bg-[#265f62] transition duration-300 disabled:bg-[#89b1b2] disabled:cursor-not-allowed"
                         >
-                            Send Message
+                            {isLoading ? (
+                                <div className="flex items-center justify-center">
+                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Sending...
+                                </div>
+                            ) : (
+                                'Send Message'
+                            )}
                         </button>
                     </div>
                 </form>

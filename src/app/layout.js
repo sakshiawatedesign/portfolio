@@ -50,14 +50,14 @@ export default function RootLayout({ children }) {
   const initializeAnimations = useCallback(() => {
     // Make sure we're in the browser
     if (typeof window === 'undefined') return;
-    
+
     // Add the ready class to body
     document.body.classList.add("scroll-animation-ready");
-    
+
     // Small timeout to ensure DOM is ready after navigation
     setTimeout(() => {
       const animatableElements = document.querySelectorAll('.animate-on-scroll');
-      
+
       // Create observer
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -72,14 +72,14 @@ export default function RootLayout({ children }) {
         threshold: 0.15,
         rootMargin: "0px 0px -10% 0px"
       });
-      
+
       // Observe all elements
       animatableElements.forEach(element => {
         // Reset animation state on route change
         element.classList.remove("visible");
         observer.observe(element);
       });
-      
+
       return () => {
         animatableElements.forEach(element => observer.unobserve(element));
       };
@@ -225,8 +225,8 @@ export default function RootLayout({ children }) {
                   />
                 </Link>
                 <GradientBtn
-                  text="Resume"
-                  onClick={toggleMenu}
+                  text={"Resume"}
+                  onClick={() => window.open('/arunResume.pdf', '_blank')}
                 />
               </div>
             </div>
@@ -309,7 +309,8 @@ export default function RootLayout({ children }) {
                   />
                 </Link>
                 <GradientBtn
-                  text="Resume"
+                  text={"Resume"}
+                  onClick={() => window.open('/arunResume.pdf', '_blank')}
                 />
               </div>
             </div>

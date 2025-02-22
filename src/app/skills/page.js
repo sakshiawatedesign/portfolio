@@ -5,20 +5,20 @@ import { faServer, faMapMarkedAlt, faCode, faToolbox, faDatabase } from '@fortaw
 import themeColors from "../../lib/theme-colors";
 
 const SkillSection = ({ title, skills, gradient }) => (
-  <div className={`p-6 rounded-2xl border border-gray-200 bg-gradient-to-br ${gradient} shadow-lg hover:shadow-xl transition-all duration-300 text-center transform hover:-translate-y-1`}>
+  <div className={`p-6 rounded-2xl border border-gray-200 bg-gradient-to-br ${gradient} shadow-lg hover:shadow-xl transition-all duration-300 text-center transform hover:-translate-y-1`}> 
     <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white drop-shadow-md">
       {title}
     </h2>
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+    <div className="flex flex-wrap gap-4 justify-center">
       {skills.map((skill) => (
         <div
           key={skill.name}
-          className="flex items-center gap-2 px-2 py-2 rounded-full bg-white/95 hover:bg-white transition-all duration-200 justify-center shadow-sm hover:shadow-md group"
+          className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/95 hover:bg-white transition-all duration-200 justify-center shadow-sm hover:shadow-md group"
         >
           <span className="w-6 h-6 flex items-center justify-center transform group-hover:scale-110 transition-transform flex-shrink-0">
             {skill.icon}
           </span>
-          <span className="text-gray-700 font-medium text-xs sm:text-sm md:text-base group-hover:text-teal-500 truncate">
+          <span className="text-gray-700 font-medium text-xs sm:text-sm md:text-base group-hover:text-teal-500">
             {skill.name}
           </span>
         </div>
