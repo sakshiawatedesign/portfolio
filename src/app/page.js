@@ -60,7 +60,7 @@ export default function Home() {
             <div> {/* Extra wrapper div to contain animated content */}
               {/* Main Heading - Smaller text on mobile */}
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                I'm <span className="gradient-text">Arun Vishwakarma,</span> <br />
+                I&apos;m <span className="gradient-text">Arun Vishwakarma,</span> <br />
                 <span>Mobile</span> <span className="gradient-text">App Developer</span> <br />
                 <span>both</span> <span className="gradient-text">Android</span> <br />
                 <span>and</span> <span className="gradient-text">IOS</span> <br />
