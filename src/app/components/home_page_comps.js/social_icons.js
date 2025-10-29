@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SocialIcons() {
   const icons = [
-    { id: 1, href: 'tel:+919867559183', src: '/icons/call.png', alt: 'Mobile Number' }, // Phone call
+  //  { id: 1, href: 'tel:+919867559183', src: '/icons/call.png', alt: 'Mobile Number' }, // Phone call
     { id: 2, href: 'mailto:arunvishwakarma3009@gmail.com', src: '/icons/email.png', alt: 'Email' },
     { id: 3, href: 'https://www.linkedin.com/in/arun-vishwakarma30', src: '/icons/linkedin.png', alt: 'LinkedIn' },
     { id: 4, href: 'https://github.com/ArunVishwakarma30', src: '/icons/github.png', alt: 'GitHub' },
