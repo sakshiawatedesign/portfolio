@@ -14,20 +14,18 @@ const ExperiencePage = () => {
       id: 1,
       company: "Uponly Technologies",
       position: "Flutter Developer",
-      address: "Navi Mumbai, Maharashtra (On-site)", // Add this line
+      address: "Navi Mumbai, Maharashtra (On-site)",
       startDate: new Date(2024, 5, 1),
       endDate: new Date(2025, 3, 19),
-      // logo: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&q=80",
-      logo: uponlyLogo, // Use imported logo
+      logo: uponlyLogo,
       website: "https://uponlytech.com/",
       achievements: [
-        "Built and delivered production-ready Flutter applications (Uponly One & Uponly Pro) for both Android and iOS platforms",
-        "Optimized application performance and user experience through efficient widget structuring and state management",
-        "Implemented scalable state management using GetX to support growing feature complexity",
-        "Worked closely with backend, design, and QA teams to ship features under tight deadlines",
-        "Integrated Firebase services, Google Maps APIs, and real-time features into consumer-facing applications",
+        "Built production-ready Flutter apps (Uponly One & Pro) for Android and iOS",
+        "Optimized performance through efficient widget structuring and state management",
+        "Implemented scalable state management using GetX for growing feature complexity",
+        "Collaborated with backend, design, and QA teams to deliver features on tight deadlines",
+        "Integrated Firebase, Google Maps APIs, and real-time features into consumer apps",
       ],
-
       techStack: [
         "Flutter",
         "Php",
@@ -47,12 +45,12 @@ const ExperiencePage = () => {
       logo: mypcotLogo,
       website: "https://www.mypcot.com/",
       achievements: [
-        "Created multiple Flutter applications from scratch following Clean Architecture and modular design principles",
-        "Worked on enterprise-scale, cloud-based applications including TheCloudcard (Document Management System with real-time WebSocket chat)",
-        "Fixed critical production issues in legacy applications without prior codebase exposure, ensuring minimal downtime",
-        "Developed and maintained real-time features using WebSockets for live messaging and updates",
-        "Collaborated with cross-functional teams to debug, refactor, and stabilize high-traffic production systems",
-        "Contributed to Yatharth Gee, a religious audio book application, resolving stability, performance, and playback issues",
+        "Built Flutter applications from scratch using Clean Architecture and modular design",
+        "Developed TheCloudcard (Directory Management System) with real-time WebSocket chat",
+        "Fixed critical production issues in legacy apps, ensuring minimal downtime",
+        "Implemented real-time features using WebSockets for live messaging and updates",
+        "Debugged and stabilized high-traffic production systems across teams",
+        "Resolved stability and performance issues in Yatharth Geeta audio book app",
       ],
       techStack: [
         "Flutter",
@@ -77,19 +75,18 @@ const ExperiencePage = () => {
   };
 
   const sortedExperiences = [...experiences].sort((a, b) => {
-  // Current job always on top
-  if (a.endDate === "-" && b.endDate !== "-") return -1;
-  if (a.endDate !== "-" && b.endDate === "-") return 1;
+    // Current job always on top
+    if (a.endDate === "-" && b.endDate !== "-") return -1;
+    if (a.endDate !== "-" && b.endDate === "-") return 1;
 
-  // If both are past jobs, sort by most recent start date
-  return b.startDate - a.startDate;
-});
-
+    // If both are past jobs, sort by most recent start date
+    return b.startDate - a.startDate;
+  });
 
   return (
     <div className="min-h-screen bg-scaffold mt-3 md:p-6 px-6 md:p-8">
       <h1
-        className="text-3xl font-bold  md:mb-8 mb-4 text-center"
+        className="text-3xl font-bold md:mb-8 mb-4 text-center"
         style={{ color: themeColors.primaryText }}
       >
         Work Experience
@@ -132,15 +129,14 @@ const ExperiencePage = () => {
 
             {/* Content */}
             <div
-              className={`ml-8 md:ml-0 md:w-1/2  md:mt-4 ${
-                index % 2 === 0 ? "md:pl-8" : "md:pr-8"
+              className={`ml-8 md:ml-0 md:w-1/2 md:mt-4 ${
+                index % 2 === 0 ? "md:pl-12" : "md:pr-12"
               }`}
             >
               <div
                 className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 lg:hover:scale-105 border-2 border-gray-200"
                 style={{ borderColor: themeColors.primaryText }}
               >
-                {/* Company Info */}
                 {/* Company Info */}
                 <div className="mb-3">
                   <h3 className="text-xl font-bold text-primaryText">
@@ -155,8 +151,7 @@ const ExperiencePage = () => {
                   >
                     {exp.company}
                   </a>
-                  <p className="text-xs text-gray-500">{exp.address}</p>{" "}
-                  {/* New Line for Address */}
+                  <p className="text-xs text-gray-500">{exp.address}</p>
                 </div>
 
                 {/* Achievements */}
@@ -196,17 +191,17 @@ const ExperiencePage = () => {
 
             {/* Date - Visible only on desktop, positioned opposite to content */}
             <div
-              className={`hidden md:block font-semibold pt-4 mr-8 absolute top-0 w-1/2 ${
+              className={`hidden md:block font-semibold absolute top-0 w-1/2 ${
                 index % 2 === 0
-                  ? "left-0 pr-8 text-right"
-                  : "right-0 pl-8 text-left"
+                  ? "left-0 pr-16 text-right"
+                  : "right-0 pl-16 text-left"
               } text-sm text-gray-600 pt-3`}
             >
               {format(exp.startDate, "MMM yyyy")} -{" "}
               {exp.endDate === "-"
                 ? "Present"
                 : format(exp.endDate, "MMM yyyy")}
-              <span className="ml-2  mr-2 text-primaryText">
+              <span className="ml-2 mr-2 text-primaryText">
                 ({calculateDuration(exp.startDate, exp.endDate)})
               </span>
             </div>
@@ -218,5 +213,3 @@ const ExperiencePage = () => {
 };
 
 export default ExperiencePage;
-
-///// 8ec2ed

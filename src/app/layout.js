@@ -9,7 +9,7 @@ import OutLinedBtn from "./components/common_copmps.js/outlined_btn";
 import GradientBtn from "./components/common_copmps.js/gradient_btn";
 import { Poppins } from "next/font/google";
 import { useState, useEffect, useRef } from "react";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -49,39 +49,43 @@ export default function RootLayout({ children }) {
   // Initialize and handle scroll animations - runs on mount and when path changes
   const initializeAnimations = useCallback(() => {
     // Make sure we're in the browser
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     // Add the ready class to body
     document.body.classList.add("scroll-animation-ready");
 
     // Small timeout to ensure DOM is ready after navigation
     setTimeout(() => {
-      const animatableElements = document.querySelectorAll('.animate-on-scroll');
+      const animatableElements =
+        document.querySelectorAll(".animate-on-scroll");
 
       // Create observer
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else if (entry.boundingClientRect.top > 0) {
-            // Only remove visible class if element is above viewport
-            entry.target.classList.remove("visible");
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -10% 0px"
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            } else if (entry.boundingClientRect.top > 0) {
+              // Only remove visible class if element is above viewport
+              entry.target.classList.remove("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: "0px 0px -10% 0px",
+        }
+      );
 
       // Observe all elements
-      animatableElements.forEach(element => {
+      animatableElements.forEach((element) => {
         // Reset animation state on route change
         element.classList.remove("visible");
         observer.observe(element);
       });
 
       return () => {
-        animatableElements.forEach(element => observer.unobserve(element));
+        animatableElements.forEach((element) => observer.unobserve(element));
       };
     }, 100);
   }, []);
@@ -97,31 +101,34 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <title>Arun Vishwakarma | Portfolio</title>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
-        .scroll-animation-ready .animate-on-scroll {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                     opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-          will-change: transform, opacity;
-        }
+          .scroll-animation-ready .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+          }
 
-        .scroll-animation-ready .animate-on-scroll[data-direction="right"] {
-          transform: translateX(30px);
-        }
+          .scroll-animation-ready .animate-on-scroll[data-direction="right"] {
+            transform: translateX(30px);
+          }
 
-        .scroll-animation-ready .animate-on-scroll[data-direction="left"] {
-          transform: translateX(-30px);
-        }
+          .scroll-animation-ready .animate-on-scroll[data-direction="left"] {
+            transform: translateX(-30px);
+          }
 
-        .scroll-animation-ready .animate-on-scroll[data-direction="down"] {
-          transform: translateY(-30px);
-        }
+          .scroll-animation-ready .animate-on-scroll[data-direction="down"] {
+            transform: translateY(-30px);
+          }
 
-        .scroll-animation-ready .animate-on-scroll.visible {
-          opacity: 1;
-          transform: translateY(0) translateX(0);
-        }
+          .scroll-animation-ready .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+          }
         `}</style>
       </head>
       <body className={`${poppins.variable} antialiased relative`}>
@@ -142,9 +149,10 @@ export default function RootLayout({ children }) {
             transition-all 
             duration-300 
             ease-in-out 
-            ${menuOpen
-              ? "opacity-100 scale-y-100 pointer-events-auto"
-              : "opacity-0 scale-y-0 pointer-events-none"
+            ${
+              menuOpen
+                ? "opacity-100 scale-y-100 pointer-events-auto"
+                : "opacity-0 scale-y-0 pointer-events-none"
             } 
             origin-top
           `}
@@ -219,14 +227,11 @@ export default function RootLayout({ children }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <OutLinedBtn
-                    onClick={toggleMenu}
-                    text="GitHub"
-                  />
+                  <OutLinedBtn onClick={toggleMenu} text="GitHub" />
                 </Link>
                 <GradientBtn
                   text={"Resume"}
-                  onClick={() => window.open('/arunResume.pdf', '_blank')}
+                  onClick={() => window.open("/arunResume.pdf", "_blank")}
                 />
               </div>
             </div>
@@ -239,7 +244,7 @@ export default function RootLayout({ children }) {
             <div className="text-xl font-bold">
               <Link href="/">
                 <Image
-                  src="/portfolio_logo.svg"
+                  src="/favicon.svg"
                   alt="Portfolio Logo"
                   width={43}
                   height={43}
@@ -304,13 +309,11 @@ export default function RootLayout({ children }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <OutLinedBtn
-                    text="GitHub"
-                  />
+                  <OutLinedBtn text="GitHub" />
                 </Link>
                 <GradientBtn
                   text={"Resume"}
-                  onClick={() => window.open('/arunResume.pdf', '_blank')}
+                  onClick={() => window.open("/arunResume.pdf", "_blank")}
                 />
               </div>
             </div>
