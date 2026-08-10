@@ -1,34 +1,56 @@
 import Link from "next/link";
-import Image from "next/image";
+import { FaBehance, FaLinkedinIn, FaEnvelope, FaPhone } from "react-icons/fa6";
 
 export default function SocialIcons() {
   const icons = [
-  //  { id: 1, href: 'tel:+919867559183', src: '/icons/call.png', alt: 'Mobile Number' }, // Phone call
-    { id: 2, href: 'mailto:arunvishwakarma3009@gmail.com', src: '/icons/email.png', alt: 'Email' },
-    { id: 3, href: 'https://www.linkedin.com/in/arun-vishwakarma30', src: '/icons/linkedin.png', alt: 'LinkedIn' },
-    { id: 4, href: 'https://github.com/ArunVishwakarma30', src: '/icons/github.png', alt: 'GitHub' },
-    // { id: 5, href: 'https://www.instagram.com/_arun__30/', src: '/icons/instagram.png', alt: 'Instagram' },
-    // { id: 7, href: 'https://x.com/?lang=en', src: '/icons/twitter.png', alt: 'Twitter' },
+    {
+      id: 1,
+      href: 'https://www.behance.net',
+      icon: <FaBehance className="w-5 h-5 text-[#0057ff]" />,
+      label: 'Behance',
+      title: 'Behance Portfolio'
+    },
+    {
+      id: 2,
+      href: 'https://www.linkedin.com',
+      icon: <FaLinkedinIn className="w-5 h-5 text-[#0a66c2]" />,
+      label: 'LinkedIn',
+      title: 'LinkedIn Profile'
+    },
+    {
+      id: 3,
+      href: 'mailto:sakshiawate31@gmail.com',
+      icon: <FaEnvelope className="w-5 h-5 text-[#ea4335]" />,
+      label: 'Email',
+      title: 'Email Sakshi'
+    },
+    {
+      id: 4,
+      href: 'tel:+919594482689',
+      icon: <FaPhone className="w-4 h-4 text-[#2c7a7b]" />,
+      label: 'Phone',
+      title: '+91 9594482689'
+    },
   ];
 
   return (
-    <div className="flex space-x-2 mt-4">
-      {icons.map(({ id, href, src, alt }) => (
+    <div className="flex flex-wrap gap-3 mt-6">
+      {icons.map(({ id, href, icon, title, label }) => (
         <Link
           key={id}
           href={href}
-          target="_blank"
+          target={href.startsWith('http') ? '_blank' : '_self'}
           rel="noopener noreferrer"
+          title={title}
           className="group"
         >
-          <div className="bg-[#edf2f7] border border-gray-300 px-3 py-2 rounded-lg transition-transform duration-300 ease-in-out group-hover:translate-y-[-5px]">
-            <Image
-              src={src}
-              alt={alt}
-              width={24}
-              height={24}
-              className="h-6 w-6 group-hover:opacity-80 transition-opacity duration-300"
-            />
+          <div className="bg-white border border-gray-200 px-3.5 py-2.5 rounded-xl shadow-sm transition-all duration-300 ease-in-out group-hover:translate-y-[-4px] group-hover:shadow-md group-hover:border-[#2c7a7b] flex items-center gap-2">
+            <span className="group-hover:scale-110 transition-transform duration-300">
+              {icon}
+            </span>
+            <span className="text-xs font-semibold text-gray-700 group-hover:text-[#2c7a7b] hidden sm:inline">
+              {label}
+            </span>
           </div>
         </Link>
       ))}

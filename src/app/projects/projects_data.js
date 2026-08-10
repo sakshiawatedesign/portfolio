@@ -1,13 +1,15 @@
 const projectsData = [
   {
     title: "Yatharth Geeta",
+    subtitle: "Multimedia Audio Book & E-Book Platform",
+    tag: "10K+ Downloads",
     path: "yatharth-geeta",
     description: [
-      "A comprehensive religious audio book application featuring the Bhagavad Gita.",
-      "Offers high-quality audio narration with synchronized text in multiple languages.",
-      "Includes bookmarking, offline playback, and customizable reading preferences.",
+      "Designed the Yatharth Geeta multimedia platform for seamless audio, video, and e-book consumption, including background and offline playback.",
+      "Created user flows, wireframes, high-fidelity UI, responsive layouts, and interactive prototypes for mobile and tablet experiences.",
+      "Designed content discovery, sharing, notifications, and intuitive navigation with a consistent design system.",
     ],
-    techStack: "Flutter, Firebase, REST APIs, Audio Streaming",
+    techStack: "UI/UX Design, Figma, Design System, Wireframing, Prototyping, Mobile & Tablet UX",
     imageUrl: "/banners/yatharth_geeta.png",
     actionButtons: [
       {
@@ -23,14 +25,61 @@ const projectsData = [
     ],
   },
   {
-    title: "TheCloudcard",
-    path: "the-cloudcard",
+    title: "Dating App (Cayya)",
+    subtitle: "LGBTQ+ Social Networking & Matchmaking Platform",
+    tag: "Live",
+    path: "cayya-dating",
     description: [
-      "Enterprise-grade document management system with cloud storage integration.",
-      "Features real-time WebSocket-based chat for seamless team collaboration.",
-      "Provides secure document sharing with role-based access control.",
+      "Designed intuitive mobile experiences for an LGBTQ+ social networking platform, improving onboarding, usability, and user engagement.",
+      "Collaborated directly with clients, providing UX recommendations and design solutions to improve overall product usability and user experience.",
+      "Created user flows, wireframes, UI designs, prototypes, and design systems while delivering features such as profile discovery, premium subscriptions, privacy controls, and video calling.",
     ],
-    techStack: "Flutter, BLoC, Clean Architecture, WebSockets, REST APIs",
+    techStack: "UI/UX Design, User Research, Mobile App UX, Design System, Wireframing, Prototyping",
+    imageUrl: "/banners/cayya_dating.png",
+    actionButtons: [
+      {
+        icon: "/icons/playstore.png",
+        link: "https://play.google.com",
+        title: "Play Store",
+      },
+      {
+        icon: "/icons/appstore.png",
+        link: "https://apps.apple.com",
+        title: "App Store",
+      },
+    ],
+  },
+  {
+    title: "CAYYA Admin Dashboard",
+    subtitle: "Enterprise User Management & Analytics Web App",
+    tag: "Web Application",
+    path: "cayya-admin-dashboard",
+    description: [
+      "Designed responsive admin dashboards for user management, analytics, and content moderation.",
+      "Created user flows, wireframes, high-fidelity UI, and reusable design system components.",
+      "Improved dashboard usability with intuitive navigation and data visualization.",
+    ],
+    techStack: "Web UX/UI, Dashboard Design, Information Architecture, Data Visualization, Figma",
+    imageUrl: "/banners/cayya_admin.png",
+    actionButtons: [
+      {
+        icon: "/icons/linkedin.png",
+        link: "https://www.behance.net",
+        title: "Design Showcase",
+      },
+    ],
+  },
+  {
+    title: "CloudCard Platform",
+    subtitle: "Cloud Storage & Team Collaboration Interface",
+    tag: "Live",
+    path: "cloudcard",
+    description: [
+      "Designed end-to-end user experiences for a cloud storage platform, including file management, sharing, and collaboration.",
+      "Created user flows, wireframes, high-fidelity UI, prototypes, and responsive interfaces.",
+      "Built a scalable design system with reusable components for a consistent and intuitive user experience.",
+    ],
+    techStack: "UI/UX Design, Cloud Platform UX, Design System, Responsive UI, Figma",
     imageUrl: "/banners/the_cloudcard.png",
     actionButtons: [
       {
@@ -41,110 +90,51 @@ const projectsData = [
     ],
   },
   {
-    title: "Uponly pro",
-    path: "uponly-pro",
+    title: "Kitty Chitty",
+    subtitle: "Digital Chit Fund Fintech Platform (Web & Mobile)",
+    tag: "Fintech Platform",
+    path: "kitty-chitty",
     description: [
-      "Users can track their investments, including assets and liability coverage.",
-      "The app allows purchasing various health insurance plans and mutual funds.",
-      "It helps in financial planning for better money management.",
+      "Designed end-to-end experiences for Members, Admins, Guarantors, and Borrowers across web and mobile.",
+      "Collaborated with clients and provided UX recommendations to improve usability, simplify workflows, and enhance the overall product experience.",
+      "Created user flows for KYC, Auctions, Installments, Membership Transfer, Wallet, and Nominee Claims, along with reusable design system components and responsive admin dashboards.",
     ],
-    techStack: "Flutter, Firebase, Gen-AI, Php, Mysql",
-    imageUrl: "/banners/uponly_pro.png",
+    techStack: "Fintech UI/UX, User Flow Mapping, Complex Workflows, Web & Mobile Design, Reusable Components",
+    imageUrl: "/banners/kitty_chitty.png",
     actionButtons: [
       {
-        icon: "/icons/playstore.png",
-        link: "https://play.google.com/store/apps/details?id=com.uponlytech.pro&hl=en",
-        title: "Play Store",
-      },
-      {
-        icon: "/icons/appstore.png",
-        link: "https://apps.apple.com/in/app/uponly-pro/id6445836709",
-        title: "App Store",
+        icon: "/icons/linkedin.png",
+        link: "https://www.behance.net",
+        title: "Design Showcase",
       },
     ],
   },
   {
-    title: "Magnova HRMS",
-    path: "magnova-hrms",
+    title: "AlcoMap E-Commerce",
+    subtitle: "Product Discovery, Cart & Delivery Tracking Platform",
+    tag: "Live",
+    path: "alcomap-ecommerce",
     description: [
-      "Comprehensive HR management system for attendance, payroll, leave, and expense management.",
-      "Features employee tracking, task assignment, salary slip generation, and streamlined onboarding.",
-      "Integrated Google Maps API and RESTful backend services for enhanced functionality.",
+      "Designed end-to-end e-commerce experiences for product discovery, cart, checkout, and order tracking.",
+      "Created user flows, wireframes, high-fidelity UI, and responsive interfaces to improve usability.",
+      "Built a scalable design system with reusable components for a consistent user experience.",
     ],
-    techStack: "Flutter, Firebase, REST APIs, Google Maps API",
-    imageUrl: "/banners/magnova_hrms.png",
+    techStack: "E-Commerce UX, Checkout Flows, Mobile & Web UI, Usability Optimization, Design System",
+    imageUrl: "/banners/alcomap.png",
     actionButtons: [
       {
         icon: "/icons/playstore.png",
-        link: "https://play.google.com/store/apps/details?id=com.app.magnova_hrms",
+        link: "https://play.google.com",
         title: "Play Store",
       },
       {
         icon: "/icons/appstore.png",
-        link: "https://apps.apple.com/in/app/magnova-hrms/id6749550570",
+        link: "https://apps.apple.com",
         title: "App Store",
       },
     ],
   },
-  {
-    title: "Uponly one",
-    path: "uponly-one",
-    description: [
-      "Manages attendance, leave, expenses, and daily salary insights.",
-      "Includes an LMS for employee training and development.",
-      "Features a Sales CRM for lead tracking and task management.",
-    ],
-    techStack: "Flutter, Firebase, Php, Mysql",
-    imageUrl: "/banners/uponly_one.png",
-    actionButtons: [
-      {
-        icon: "/icons/playstore.png",
-        link: "https://play.google.com/store/apps/details?id=com.uponly.uponly&hl=en",
-        title: "Play Store",
-      },
-      {
-        icon: "/icons/appstore.png",
-        link: "https://apps.apple.com/in/app/uponly/id6444430010",
-        title: "App Store",
-      },
-    ],
-  },
-  {
-    title: "Easy Ride",
-    path: "easy-ride",
-    description: [
-      "Easy Ride connects riders with nearby drivers for quick and reliable transportation",
-      "Users can track their rides in real-time with live location updates.",
-      "The app offers safety features like driver details and ride-sharing options.",
-    ],
-    techStack: "Flutter, NodeJs, MongoDB, Firebase, Google Maps API",
-    imageUrl: "/banners/easy_ride.png",
-    actionButtons: [
-      {
-        icon: "/icons/github.png",
-        link: "https://github.com/ArunVishwakarma30/easy_ride_ui/",
-        title: "View Code",
-      },
-    ],
-  },
-  // {
-  //     title: "Anime Gallery",
-  //     path: 'amnime-gallery',
-  //     description: [
-  //         "Comprehensive anime database with advanced filtering and search functionality",
-  //         "Personalized watchlist and recommendation engine based on user preferences",
-  //         "Interactive community features including ratings, reviews, and discussion forums"
-  //     ],
-  //     techStack: "Java, Android studio, Firebase, REST API",
-  //     imageUrl: "/icons/call.png",
-  //     actionButtons: [
-  //         {
-  //             icon: "/icons/github.png",
-  //             link: "https://github.com/ArunVishwakarma30/easy_ride_ui/",
-  //             title: "View Code"
-  //         }
-  //     ]
-  // }
 ];
 
 export default projectsData;
+

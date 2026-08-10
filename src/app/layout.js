@@ -101,7 +101,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Arun Vishwakarma | Portfolio</title>
+        <title>Sakshi Awate | UI/UX Designer Portfolio</title>
+        <meta name="description" content="Sakshi Awate - UI/UX Designer with 3.5+ years of experience designing user-centered web and mobile applications, design systems, wireframing, and prototyping." />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
@@ -223,32 +224,32 @@ export default function RootLayout({ children }) {
               </ul>
               <div className="flex space-x-4">
                 <Link
-                  href="https://github.com/ArunVishwakarma30"
+                  href="https://www.behance.net"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <OutLinedBtn onClick={toggleMenu} text="GitHub" />
+                  <OutLinedBtn onClick={toggleMenu} text="Behance" />
                 </Link>
                 <GradientBtn
                   text={"Resume"}
-                  onClick={() => window.open("/arunResume.pdf", "_blank")}
+                  onClick={() => window.open("/sakshiResume.pdf", "_blank")}
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <header className="fixed top-0 left-0 right-0 bg-white z-40">
+        <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-100">
           <nav className="container mx-auto flex justify-between items-center p-4">
             {/* Logo */}
             <div className="text-xl font-bold">
-              <Link href="/">
-                <Image
-                  src="/favicon.svg"
-                  alt="Portfolio Logo"
-                  width={43}
-                  height={43}
-                />
+              <Link href="/" className="flex items-center gap-2 group">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#319795] to-[#46b97a] flex items-center justify-center text-white font-bold shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all">
+                  SA
+                </div>
+                <span className="font-bold text-gray-800 text-base md:text-lg group-hover:text-[#2c7a7b] transition-colors">
+                  Sakshi Awate
+                </span>
               </Link>
             </div>
 
@@ -258,7 +259,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/"
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    className="font-medium text-sm hover:bg-[#dfeded] px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
                     Home
@@ -267,7 +268,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/projects"
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    className="font-medium text-sm hover:bg-[#dfeded] px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
                     Projects
@@ -276,7 +277,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/experience"
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    className="font-medium text-sm hover:bg-[#dfeded] px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
                     Experience
@@ -285,7 +286,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/skills"
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    className="font-medium text-sm hover:bg-[#dfeded] px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
                     Skills
@@ -294,7 +295,7 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link
                     href="/contact"
-                    className="font-medium text-sm hover:bg-[#dfeded] hover:text-white px-4 py-2 rounded-md transition duration-300"
+                    className="font-medium text-sm hover:bg-[#dfeded] px-4 py-2 rounded-md transition duration-300"
                     style={{ color: themeColors.primaryText }}
                   >
                     Contact
@@ -305,15 +306,15 @@ export default function RootLayout({ children }) {
               {/* Desktop Buttons */}
               <div className="hidden md:flex space-x-4">
                 <Link
-                  href="https://github.com/ArunVishwakarma30"
+                  href="https://www.behance.net"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <OutLinedBtn text="GitHub" />
+                  <OutLinedBtn text="Behance" />
                 </Link>
                 <GradientBtn
                   text={"Resume"}
-                  onClick={() => window.open("/arunResume.pdf", "_blank")}
+                  onClick={() => window.open("/sakshiResume.pdf", "_blank")}
                 />
               </div>
             </div>

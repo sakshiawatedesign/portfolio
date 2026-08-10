@@ -3,21 +3,27 @@
 import React, { useState } from "react";
 
 const themeColors = {
-  primaryText: "#0d9488",
+  primaryText: "#2c7a7b",
 };
 
 const ProjectCard = ({
   title,
+  subtitle,
+  tag,
   description,
   techStack,
   imageUrl,
-  actionButtons,
+  actionButtons = [],
   path,
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleCardClick = () => {
-    window.open(imageUrl, "_blank");
+    if (actionButtons.length > 0 && actionButtons[0].link) {
+      window.open(actionButtons[0].link, "_blank");
+    } else {
+      window.open(imageUrl, "_blank");
+    }
   };
 
   const handleButtonClick = (e, link) => {
@@ -31,15 +37,10 @@ const ProjectCard = ({
   const renderDescription = () => {
     if (Array.isArray(description)) {
       return (
-        <ul className="text-gray-600 text-sm space-y-2 pl-5">
+        <ul className="text-gray-600 text-xs sm:text-sm space-y-2 pl-4">
           {description.map((point, index) => (
-            <li key={index} className="relative">
-              <span className="absolute -left-5 top-1.5 w-3 h-3 rounded-full bg-teal-50 border border-teal-300 flex items-center justify-center">
-                <span
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: themeColors.primaryText }}
-                ></span>
-              </span>
+            <li key={index} className="relative leading-relaxed">
+              <span className="absolute -left-4 top-2 w-1.5 h-1.5 rounded-full bg-[#2c7a7b]"></span>
               {point}
             </li>
           ))}
@@ -47,89 +48,117 @@ const ProjectCard = ({
       );
     } else {
       return (
-        <p className="text-gray-600 text-sm line-clamp-6">{description}</p>
+        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{description}</p>
       );
     }
   };
 
   return (
     <div
-      className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col cursor-pointer"
+      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col cursor-pointer border border-gray-200 hover:border-[#2c7a7b] group hover:-translate-y-1"
       onClick={handleCardClick}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="w-full h-48 p-4 overflow-hidden relative">
+      {/* Image Container with Badge */}
+      <div className="w-full h-52 overflow-hidden relative bg-gray-100">
         <img
           src={imageUrl}
-          alt={`${title} screenshot`}
-          className={`w-full h-full object-fit transition-transform duration-300 ${
-            isHovering && isLargeScreen ? "scale-105" : ""
-          }`}
+          alt={`${title} mockup`}
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
         />
-        {isHovering && isLargeScreen && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 13a3 3 0 100-6 3 3 0 000 6z"
-              />
-            </svg>
+
+        {/* Status Badge */}
+        {tag && (
+          <div className="absolute top-3 right-3 z-10">
+            <span className={`px-3 py-1 rounded-full text-[11px] font-bold shadow-md backdrop-blur-md ${
+              tag.includes('Live') 
+                ? 'bg-emerald-500 text-white'
+                : tag.includes('10K') 
+                ? 'bg-blue-600 text-white' 
+                : 'bg-gray-900/80 text-white'
+            }`}>
+              {tag}
+            </span>
           </div>
         )}
-      </div>
-      <div className="p-4 space-y-4 flex-1">
-        <h2 className="text-xl font-bold text-gray-800 text-center">{title}</h2>
-        <div className="mt-3 mb-3">{renderDescription()}</div>
-        <div>
-          <p className="text-sm font-medium text-gray-700 mb-2">Tech Stack</p>
-          <div className="flex flex-wrap gap-2">
-            {Array.isArray(techStack)
-              ? techStack.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 rounded-[6px] text-xs font-medium bg-gray-100 border border-gray-300"
-                  >
-                    {tech}
-                  </span>
-                ))
-              : techStack.split(",").map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 rounded-[10px] text-xs font-medium bg-gray-100 border border-gray-300"
-                  >
-                    {tech.trim()}
-                  </span>
-                ))}
-          </div>
+
+        {/* Hover Overlay */}
+        <div className={`absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] transition-opacity duration-300 ${
+          isHovering ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}>
+          <span className="px-4 py-2 rounded-full bg-white text-gray-900 font-bold text-xs shadow-lg transform group-hover:scale-105 transition-transform flex items-center gap-1.5">
+            View Design Details ↗
+          </span>
         </div>
       </div>
-      <div className="flex justify-around p-4 pt-2">
-        {actionButtons.map((button, idx) => (
-          <button
-            key={idx}
-            onClick={(e) => handleButtonClick(e, button.link)}
-            title={button.title}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors flex items-center"
-          >
-            <img
-              src={button.icon}
-              alt={button.title}
-              className="w-6 h-6 object-contain"
-            />
-          </button>
-        ))}
+
+      {/* Content */}
+      <div className="p-5 space-y-4 flex-1 flex flex-col justify-between">
+        <div>
+          <h2 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-[#2c7a7b] transition-colors">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-xs font-semibold text-[#2c7a7b] mt-0.5 mb-3">
+              {subtitle}
+            </p>
+          )}
+
+          <div className="mt-2 mb-4">{renderDescription()}</div>
+        </div>
+
+        <div>
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-[11px] font-semibold uppercase text-gray-400 tracking-wider mb-2">
+              Design & Skills
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {Array.isArray(techStack)
+                ? techStack.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-gray-50 border border-gray-200 text-gray-700"
+                    >
+                      {tech}
+                    </span>
+                  ))
+                : techStack.split(",").map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-teal-50/60 border border-teal-200/60 text-[#2c7a7b]"
+                    >
+                      {tech.trim()}
+                    </span>
+                  ))}
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          {actionButtons && actionButtons.length > 0 && (
+            <div className="flex items-center gap-2 pt-4 mt-3 border-t border-gray-100">
+              {actionButtons.map((button, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => handleButtonClick(e, button.link)}
+                  title={button.title}
+                  className="flex-1 py-2 px-3 hover:bg-teal-50 border border-gray-200 hover:border-[#2c7a7b] rounded-xl transition-all flex items-center justify-center gap-2 text-xs font-semibold text-gray-700 hover:text-[#2c7a7b]"
+                >
+                  <img
+                    src={button.icon}
+                    alt={button.title}
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span>{button.title}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
 export default ProjectCard;
+

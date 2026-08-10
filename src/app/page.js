@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   const redirectToEmail = () => {
-    window.location.href = 'mailto:arunvishwakarma3009@gmail.com';
+    window.location.href = 'mailto:sakshiawate31@gmail.com';
   };
 
   return (
@@ -60,19 +60,18 @@ export default function Home() {
             <div> {/* Extra wrapper div to contain animated content */}
               {/* Main Heading - Smaller text on mobile */}
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                I&apos;m <span className="gradient-text">Arun Vishwakarma,</span> <br />
-                <span>Mobile</span> <span className="gradient-text">App Developer</span> <br />
-                <span>both</span> <span className="gradient-text">Android</span> <br />
-                <span>and</span> <span className="gradient-text">IOS</span> <br />
+                I&apos;m <span className="gradient-text">Sakshi Awate,</span> <br />
+                <span>UI/UX</span> <span className="gradient-text">Designer</span> <br />
+                <span>Web &</span> <span className="gradient-text">Mobile Apps</span> <br />
+                <span>Digital</span> <span className="gradient-text">Experiences</span> <br />
               </h1>
 
               {/* Subheading */}
               <p className="mt-4 md:mt-6 text-base md:text-md text-gray-600">
-                I design and develop{" "}
-                <span style={{ fontWeight: "700" }} className="gradient-text">functional</span> and{" "}
-                <span style={{ fontWeight: "700" }} className="gradient-text">beautiful</span> mobile applications with{" "}
-                passion and <br id="break" style={{ display: 'block' }} /> a focus on <span style={{ fontWeight: "700" }} className="gradient-text">user experience</span> and{" "}
-                <span style={{ fontWeight: "700" }} className="gradient-text">high quality</span>.
+                UI/UX Designer with <span style={{ fontWeight: "700" }} className="gradient-text">3.5+ years of experience</span> designing{" "}
+                <span style={{ fontWeight: "700" }} className="gradient-text">user-centered</span> web and mobile applications across diverse domains.{" "}
+                Skilled in <span style={{ fontWeight: "700" }} className="gradient-text">Figma, UX research, wireframing, prototyping</span>, and{" "}
+                <span style={{ fontWeight: "700" }} className="gradient-text">scalable design systems</span> delivering intuitive digital products.
               </p>
 
               {/* Buttons */}
@@ -85,7 +84,7 @@ export default function Home() {
                   ) : (
                     <GradientBtn
                       text={"View CV"}
-                      onClick={() => window.open('/arunResume.pdf', '_blank')}
+                      onClick={() => window.open('/sakshiResume.pdf', '_blank')}
                     />
                   )}
                 </div>
@@ -103,13 +102,13 @@ export default function Home() {
             <div className="aspect-square relative">  {/* This ensures width and height are equal */}
               <div className="absolute inset-0 rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, #319795 0%, #46b97a 100%)',
+                  background: 'linear-gradient(135deg, #319795 0%, #46b97a 100%)',
                   padding: '4px'  // This creates the border thickness
                 }}
               >  {/* This wrapper helps maintain the circular shape */}
                 <Image
                   src="/profile-img.jpg"
-                  alt="Arun Vishwakarma"
+                  alt="Sakshi Awate - UI/UX Designer"
                   fill
                   priority
                   className="rounded-full object-cover p-1"
@@ -123,10 +122,10 @@ export default function Home() {
 
       <AnimateOnScroll delay={400} distance={30}>
         <div className='text-3xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mb-5 mt-10 md:mt-15 lg:mt-20'>
-          The full product development stack.
+          The full product design & UX stack.
         </div>
         <div className='text-gray-600 text-center mt-4 lg:w-[70%] md:w-[80%] w-[98%] mx-auto'>
-          From designing the interface to implementing your fully featured application - I can provide the full product design process from an idea to a finished hiqh quality app, polished with fantastic design and running on state of the art software.
+          From in-depth user research and information architecture to high-fidelity UI and scalable design systems — I provide the complete user-centered product design process from initial concept to developer-ready digital experiences.
         </div>
       </AnimateOnScroll>
 
@@ -136,33 +135,33 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 lg:w-[70%] md:w-[80%] w-[98%] mx-auto">
           {/* Card 1 */}
           <FeatureCard
-            iconClass="fas fa-mobile-alt"
-            title="Mobile App Development"
-            description="Developing cross-platform mobile applications with great performance and elegant UI."
+            iconClass="fas fa-users"
+            title="User Research & Strategy"
+            description="Conducting user research, user journey mapping, information architecture, and usability testing to craft intuitive experiences."
             circleAvatarBgColor="#0bc5ea"
           />
 
           {/* Card 2 */}
           <FeatureCard
-            iconClass="fas fa-server"
-            title="Backend Development"
-            description="Building robust and scalable backend systems with modern technologies."
-            circleAvatarBgColor="#ed8936"
+            iconClass="fas fa-paint-brush"
+            title="UI & Visual Design"
+            description="Designing pixel-perfect, aesthetic, and accessible user interfaces for web, mobile apps, and tablet platforms."
+            circleAvatarBgColor="#ec4899"
           />
 
           {/* Card 3 */}
           <FeatureCard
-            iconClass="fas fa-code"
-            title="Data Structures & Algorithms"
-            description="Mastering fundamental data structures and algorithms to build efficient and optimized solutions."
+            iconClass="fas fa-layer-group"
+            title="Design Systems & Scalability"
+            description="Building scalable component libraries, style guides, and design tokens for seamless developer handoff."
             circleAvatarBgColor="#9f7aea"
           />
 
           {/* Card 4 */}
           <FeatureCard
-            iconClass="fas fa-database"
-            title="Database Management"
-            description="Ensuring data integrity, security, and performance with optimized database solutions."
+            iconClass="fas fa-bezier-curve"
+            title="Wireframing & Prototyping"
+            description="Creating low & high-fidelity interactive prototypes in Figma to validate product concepts and streamline user flows."
             circleAvatarBgColor="#38b2ac"
           />
         </div>

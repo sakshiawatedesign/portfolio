@@ -2,184 +2,284 @@
 
 import React from "react";
 import { format, differenceInMonths } from "date-fns";
-import { FaBriefcase } from "react-icons/fa";
-import uponlyLogo from "../../assets/images/uponlyTech.jpg";
 import mypcotLogo from "../../assets/images/mypcotInfotech.jpeg";
 import Image from "next/image";
 import themeColors from "../../lib/theme-colors";
+import { 
+  FaBriefcase, 
+  FaLaptopCode, 
+  FaPalette, 
+  FaCloudSun, 
+  FaHandHoldingHand,
+  FaCalendarDays,
+  FaLocationDot 
+} from "react-icons/fa6";
+import AnimateOnScroll from "../components/AnimateOnScroll";
 
 const ExperiencePage = () => {
   const experiences = [
     {
       id: 1,
-      company: "Uponly Technologies",
-      position: "Flutter Developer",
-      address: "Navi Mumbai, Maharashtra (On-site)",
-      startDate: new Date(2024, 5, 1),
-      endDate: new Date(2025, 3, 19),
-      logo: uponlyLogo,
-      website: "https://uponlytech.com/",
+      company: "Mypcot Infotech",
+      position: "UI/UX Designer",
+      address: "Mumbai, Maharashtra (On-site)",
+      startDate: new Date(2025, 11, 1), // Dec 2025
+      endDate: "-",
+      logo: mypcotLogo,
+      icon: <FaPalette className="text-white w-6 h-6" />,
+      accentColor: "#2c7a7b",
+      website: "https://www.mypcot.com/",
       achievements: [
-        "Built production-ready Flutter apps (Uponly One & Pro) for Android and iOS",
-        "Optimized performance through efficient widget structuring and state management",
-        "Implemented scalable state management using GetX for growing feature complexity",
-        "Collaborated with backend, design, and QA teams to deliver features on tight deadlines",
-        "Integrated Firebase, Google Maps APIs, and real-time features into consumer apps",
+        "UI/UX Designer at Mypcot Infotech with hands-on experience in end-to-end product design.",
+        "Designed and improved user experiences for dating apps, chatting platforms, and enquiry-based applications.",
+        "Created user flows, wireframes, high-fidelity UI designs, interactive prototypes, and reusable design systems.",
+        "Collaborated directly with clients and cross-functional teams to deliver user-centered digital solutions.",
       ],
       techStack: [
-        "Flutter",
-        "Php",
-        "Mysql",
-        "Firebase",
-        "GetX",
-        "Google Maps API",
+        "Figma",
+        "Figma Jam",
+        "UI Design",
+        "UX Strategy",
+        "Design Systems",
+        "Wireframing",
+        "Prototyping",
       ],
     },
     {
       id: 2,
-      company: "Mypcot Infotech",
-      position: "Software Developer",
-      address: "Mumbai, Maharashtra (On-site)",
-      startDate: new Date(2025, 3, 20),
-      endDate: "-",
-      logo: mypcotLogo,
-      website: "https://www.mypcot.com/",
+      company: "SundayTech",
+      position: "UI/UX Designer",
+      address: "Mumbai, Maharashtra",
+      startDate: new Date(2024, 5, 1), // June 2024
+      endDate: new Date(2025, 7, 31), // Aug 2025
+      icon: <FaLaptopCode className="text-white w-6 h-6" />,
+      accentColor: "#6366f1",
+      website: "#",
       achievements: [
-        "Built Flutter applications from scratch using Clean Architecture and modular design",
-        "Developed TheCloudcard (Directory Management System) with real-time WebSocket chat",
-        "Fixed critical production issues in legacy apps, ensuring minimal downtime",
-        "Implemented real-time features using WebSockets for live messaging and updates",
-        "Debugged and stabilized high-traffic production systems across teams",
-        "Resolved stability and performance issues in Yatharth Geeta audio book app",
+        "Designed responsive web and mobile interfaces using Figma for diverse client applications.",
+        "Created scalable design systems, wireframes, component libraries, and high-fidelity prototypes.",
+        "Collaborated closely with cross-functional engineering teams to deliver seamless user-centered design solutions.",
+        "Conducted usability testing and iteration cycles to optimize user flows and engagement metrics.",
       ],
       techStack: [
-        "Flutter",
-        "BLoC",
-        "Clean Architecture",
-        "WebSockets (Real-Time Communication)",
-        "Firebase",
-        "REST APIs",
-        "Google Maps API",
+        "Figma",
+        "Design Systems",
+        "Wireframing",
+        "High-Fidelity Prototyping",
+        "Responsive Web & Mobile",
+        "Cross-Functional Collaboration",
+      ],
+    },
+    {
+      id: 3,
+      company: "Porlob Technology",
+      position: "UI/UX Designer",
+      address: "Mumbai, Maharashtra",
+      startDate: new Date(2023, 10, 1), // Nov 2023
+      endDate: new Date(2024, 4, 31), // May 2024
+      icon: <FaBriefcase className="text-white w-6 h-6" />,
+      accentColor: "#ec4899",
+      website: "#",
+      achievements: [
+        "Partnered with clients to design intuitive user interfaces for digital platforms.",
+        "Delivered end-to-end design solutions strictly aligned with target user needs and business goals.",
+        "Structured information architecture, user journeys, and component guidelines for client platforms.",
+      ],
+      techStack: [
+        "UI Design",
+        "UX Research",
+        "Information Architecture",
+        "Figma",
+        "Client Collaboration",
+      ],
+    },
+    {
+      id: 4,
+      company: "Freelancing",
+      position: "UI/UX Design Freelancer",
+      address: "Remote / Client-based",
+      startDate: new Date(2023, 5, 1), // June 2023
+      endDate: new Date(2023, 9, 31), // Oct 2023
+      icon: <FaHandHoldingHand className="text-white w-6 h-6" />,
+      accentColor: "#f59e0b",
+      website: "#",
+      achievements: [
+        "Partnered with multiple independent clients to design intuitive user interfaces for digital platforms.",
+        "Delivered custom UX/UI solutions tailored to specific user pain points and growth metrics.",
+        "Created wireframes, interactive mobile prototypes, and visual assets for startup MVPs.",
+      ],
+      techStack: [
+        "UI/UX Design",
+        "Wireframing",
+        "Figma",
+        "Interaction Design",
+        "User Flow Mapping",
+      ],
+    },
+    {
+      id: 5,
+      company: "IMD (India Meteorological Department)",
+      position: "UI/UX Design Intern",
+      address: "Mumbai / Pune, Maharashtra",
+      startDate: new Date(2022, 5, 1), // June 2022
+      endDate: new Date(2023, 4, 31), // May 2023
+      icon: <FaCloudSun className="text-white w-6 h-6" />,
+      accentColor: "#0ea5e9",
+      website: "#",
+      achievements: [
+        "Analyzed user needs and designed intuitive features for a real-time weather application.",
+        "Focused on clear data visualization, easy navigation, and real-time weather updates for better user experience.",
+        "Created low and high-fidelity mockups for weather forecasting maps, temperature alerts, and localized widgets.",
+      ],
+      techStack: [
+        "User Research",
+        "Data Visualization",
+        "Information Architecture",
+        "Wireframing",
+        "Weather App UX",
       ],
     },
   ];
 
   const calculateDuration = (startDate, endDate) => {
     const end = endDate === "-" ? new Date() : endDate;
-    const months = differenceInMonths(end, startDate);
+    const months = Math.max(1, differenceInMonths(end, startDate));
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
-    return `${
-      years > 0 ? `${years} year${years > 1 ? "s" : ""}` : ""
-    } ${remainingMonths} month${remainingMonths > 1 ? "s" : ""}`;
+    
+    if (years > 0 && remainingMonths > 0) {
+      return `${years} yr${years > 1 ? "s" : ""} ${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`;
+    } else if (years > 0) {
+      return `${years} yr${years > 1 ? "s" : ""}`;
+    } else {
+      return `${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`;
+    }
   };
 
   const sortedExperiences = [...experiences].sort((a, b) => {
-    // Current job always on top
     if (a.endDate === "-" && b.endDate !== "-") return -1;
     if (a.endDate !== "-" && b.endDate === "-") return 1;
-
-    // If both are past jobs, sort by most recent start date
     return b.startDate - a.startDate;
   });
 
   return (
-    <div className="min-h-screen bg-scaffold mt-3 md:p-6 px-6 md:p-8">
-      <h1
-        className="text-3xl font-bold md:mb-8 mb-4 text-center"
-        style={{ color: themeColors.primaryText }}
-      >
-        Work Experience
-      </h1>
+    <div className="min-h-screen bg-scaffold mt-3 md:p-6 px-4 md:p-8 max-w-5xl mx-auto">
+      <AnimateOnScroll>
+        <div className="text-center mb-10">
+          <h1
+            className="text-3xl md:text-4xl font-bold mb-3"
+            style={{ color: themeColors.primaryText }}
+          >
+            Work Experience
+          </h1>
+          <p className="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Over 3.5+ years of combined experience designing user-centric web and mobile products across diverse industries and teams.
+          </p>
+        </div>
+      </AnimateOnScroll>
 
       <div className="relative max-w-4xl mx-auto">
         {/* Timeline line */}
-        <div className="absolute left-0 md:left-1/2 h-full w-0.5 bg-[#9ed8d9] transform md:-translate-x-1/2"></div>
+        <div className="absolute left-6 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-[#2c7a7b] via-[#46b97a] to-[#9ed8d9] transform md:-translate-x-1/2"></div>
 
         {sortedExperiences.map((exp, index) => (
           <div
             key={exp.id}
             className={`relative flex flex-col md:flex-row ${
               index % 2 === 0 ? "md:flex-row-reverse" : ""
-            } mb-14`}
+            } mb-12`}
           >
-            {/* Timeline dot with logo */}
-            <div className="absolute left-0 md:left-1/2 w-14 h-14 transform -translate-x-1/2 z-10">
-              <div className="w-full h-full rounded-full border-4 border-[#4faba9] bg-white overflow-hidden">
-                <Image
-                  src={exp.logo}
-                  alt={`${exp.company} logo`}
-                  className="object-cover"
-                  width={60}
-                  height={60}
-                />
+            {/* Timeline dot with logo/icon */}
+            <div className="absolute left-6 md:left-1/2 w-12 h-12 transform -translate-x-1/2 z-10">
+              <div 
+                className="w-full h-full rounded-2xl shadow-lg border-2 border-white flex items-center justify-center overflow-hidden transition-transform duration-300 hover:scale-110"
+                style={{ backgroundColor: exp.accentColor || "#2c7a7b" }}
+              >
+                {exp.logo ? (
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    className="object-cover w-full h-full"
+                    width={48}
+                    height={48}
+                  />
+                ) : (
+                  exp.icon
+                )}
               </div>
             </div>
 
             {/* Date - Visible only on mobile */}
-            <div className="md:hidden text-sm font-semibold text-gray-600 pt-4 mb-2 ml-8">
-              {format(exp.startDate, "MMM yyyy")} -{" "}
-              {exp.endDate === "-"
-                ? "Present"
-                : format(exp.endDate, "MMM yyyy")}
-              <span className="ml-2 text-primaryText font-semibold">
+            <div className="md:hidden text-xs font-semibold text-gray-600 pt-2 mb-2 ml-16 flex items-center gap-1.5">
+              <FaCalendarDays className="text-[#2c7a7b] w-3.5 h-3.5" />
+              <span>
+                {format(exp.startDate, "MMM yyyy")} -{" "}
+                {exp.endDate === "-"
+                  ? "Present"
+                  : format(exp.endDate, "MMM yyyy")}
+              </span>
+              <span className="text-[#2c7a7b] font-bold">
                 ({calculateDuration(exp.startDate, exp.endDate)})
               </span>
             </div>
 
-            {/* Content */}
+            {/* Content Card */}
             <div
-              className={`ml-8 md:ml-0 md:w-1/2 md:mt-4 ${
-                index % 2 === 0 ? "md:pl-12" : "md:pr-12"
+              className={`ml-14 md:ml-0 md:w-1/2 ${
+                index % 2 === 0 ? "md:pl-10" : "md:pr-10"
               }`}
             >
               <div
-                className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 lg:hover:scale-105 border-2 border-gray-200"
-                style={{ borderColor: themeColors.primaryText }}
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-[#2c7a7b] group"
               >
                 {/* Company Info */}
-                <div className="mb-3">
-                  <h3 className="text-xl font-bold text-primaryText">
-                    {exp.position}
-                  </h3>
-                  <a
-                    href={exp.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondaryText hover:underline font-bold text-sm"
-                    style={{ color: themeColors.primaryText }}
-                  >
-                    {exp.company}
-                  </a>
-                  <p className="text-xs text-gray-500">{exp.address}</p>
+                <div className="mb-4">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-[#2c7a7b] transition-colors">
+                      {exp.position}
+                    </h3>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mt-1">
+                    <span
+                      className="font-bold text-sm"
+                      style={{ color: themeColors.primaryText }}
+                    >
+                      {exp.company}
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-gray-500 flex items-center gap-1 mt-1">
+                    <FaLocationDot className="text-gray-400 w-3 h-3" />
+                    {exp.address}
+                  </p>
                 </div>
 
                 {/* Achievements */}
-                <div className="mb-4">
-                  <ul className="list-none space-y-2">
+                <div className="mb-5">
+                  <ul className="space-y-2.5">
                     {exp.achievements.map((achievement, i) => (
                       <li
                         key={i}
-                        className="text-gray-700 text-sm pl-4 relative"
+                        className="text-gray-700 text-xs sm:text-sm pl-4 relative leading-relaxed"
                       >
-                        <span className="absolute left-0 top-2 w-1.5 h-1.5 bg-gray-700 rounded-full"></span>
-                        <span className="inline-block">{achievement}</span>
+                        <span className="absolute left-0 top-1.5 w-1.5 h-1.5 bg-[#2c7a7b] rounded-full"></span>
+                        <span>{achievement}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Tech Stack */}
-                <div>
-                  <div className="flex flex-wrap gap-3">
+                {/* Tech & Tools Stack */}
+                <div className="pt-3 border-t border-gray-100">
+                  <p className="text-[11px] font-semibold uppercase text-gray-400 tracking-wider mb-2">
+                    Key Tools & Skills
+                  </p>
+                  <div className="flex flex-wrap gap-2">
                     {exp.techStack.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-4 py-2 bg-[#e1ebeb] font-bold rounded-xl shadow-sm border border-[#cde3e4] text-xs"
-                        style={{
-                          backgroundColor: themeColors.iconBg,
-                          color: themeColors.secondaryText,
-                        }}
+                        className="px-3 py-1 bg-teal-50/70 hover:bg-teal-100/70 font-semibold rounded-lg border border-teal-200/60 text-[11px] text-[#2c7a7b] transition-colors"
                       >
                         {tech}
                       </span>
@@ -191,18 +291,23 @@ const ExperiencePage = () => {
 
             {/* Date - Visible only on desktop, positioned opposite to content */}
             <div
-              className={`hidden md:block font-semibold absolute top-0 w-1/2 ${
+              className={`hidden md:block font-semibold absolute top-3 w-1/2 ${
                 index % 2 === 0
-                  ? "left-0 pr-16 text-right"
-                  : "right-0 pl-16 text-left"
-              } text-sm text-gray-600 pt-3`}
+                  ? "left-0 pr-12 text-right"
+                  : "right-0 pl-12 text-left"
+              } text-sm text-gray-600`}
             >
-              {format(exp.startDate, "MMM yyyy")} -{" "}
-              {exp.endDate === "-"
-                ? "Present"
-                : format(exp.endDate, "MMM yyyy")}
-              <span className="ml-2 mr-2 text-primaryText">
-                ({calculateDuration(exp.startDate, exp.endDate)})
+              <div className="flex items-center gap-1.5 justify-end" style={{ justifyContent: index % 2 === 0 ? "flex-end" : "flex-start" }}>
+                <FaCalendarDays className="text-[#2c7a7b] w-4 h-4" />
+                <span>
+                  {format(exp.startDate, "MMM yyyy")} -{" "}
+                  {exp.endDate === "-"
+                    ? "Present"
+                    : format(exp.endDate, "MMM yyyy")}
+                </span>
+              </div>
+              <span className="text-[#2c7a7b] font-bold text-xs block mt-1">
+                {calculateDuration(exp.startDate, exp.endDate)}
               </span>
             </div>
           </div>
@@ -213,3 +318,4 @@ const ExperiencePage = () => {
 };
 
 export default ExperiencePage;
+
