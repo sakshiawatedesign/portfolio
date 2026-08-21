@@ -120,7 +120,7 @@ const ContactPage = () => {
                                 <p className="text-xs text-white/70 font-medium mb-3">Portfolio & Socials</p>
                                 <div className="flex gap-3">
                                     <a
-                                        href="https://www.behance.net"
+                                        href="https://www.behance.net/sakshiawate"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="px-4 py-2.5 bg-white text-gray-900 font-bold rounded-xl text-xs flex items-center gap-2 shadow hover:bg-teal-50 transition-all"
@@ -129,7 +129,7 @@ const ContactPage = () => {
                                         <span>Behance</span>
                                     </a>
                                     <a
-                                        href="https://www.linkedin.com"
+                                        href="https://www.linkedin.com/in/sakshi-awate-900239198/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="px-4 py-2.5 bg-white text-gray-900 font-bold rounded-xl text-xs flex items-center gap-2 shadow hover:bg-teal-50 transition-all"

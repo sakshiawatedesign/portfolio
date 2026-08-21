@@ -224,7 +224,7 @@ export default function RootLayout({ children }) {
               </ul>
               <div className="flex space-x-4">
                 <Link
-                  href="https://www.behance.net"
+                  href="https://www.behance.net/sakshiawate"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -306,7 +306,7 @@ export default function RootLayout({ children }) {
               {/* Desktop Buttons */}
               <div className="hidden md:flex space-x-4">
                 <Link
-                  href="https://www.behance.net"
+                  href="https://www.behance.net/sakshiawate"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

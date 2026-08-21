@@ -5,14 +5,14 @@ export default function SocialIcons() {
   const icons = [
     {
       id: 1,
-      href: 'https://www.behance.net',
+      href: 'https://www.behance.net/sakshiawate',
       icon: <FaBehance className="w-5 h-5 text-[#0057ff]" />,
       label: 'Behance',
       title: 'Behance Portfolio'
     },
     {
       id: 2,
-      href: 'https://www.linkedin.com',
+      href: 'https://www.linkedin.com/in/sakshi-awate-900239198/',
       icon: <FaLinkedinIn className="w-5 h-5 text-[#0a66c2]" />,
       label: 'LinkedIn',
       title: 'LinkedIn Profile'

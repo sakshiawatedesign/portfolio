@@ -64,7 +64,7 @@ const projectsData = [
     actionButtons: [
       {
         icon: "/icons/linkedin.png",
-        link: "https://www.behance.net",
+        link: "https://www.behance.net/sakshiawate",
         title: "Design Showcase",
       },
     ],
@@ -104,7 +104,7 @@ const projectsData = [
     actionButtons: [
       {
         icon: "/icons/linkedin.png",
-        link: "https://www.behance.net",
+        link: "https://www.behance.net/sakshiawate",
         title: "Design Showcase",
       },
     ],
