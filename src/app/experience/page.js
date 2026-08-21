@@ -3,6 +3,9 @@
 import React from "react";
 import { format, differenceInMonths } from "date-fns";
 import mypcotLogo from "../../assets/images/mypcotInfotech.jpeg";
+import sundayTechLogo from "../../assets/images/sunday_tech_logo.jpeg";
+import porlobLogo from "../../assets/images/porlob_technologies_logo.jpeg";
+import imdLogo from "../../assets/images/imd_img.jpeg";
 import Image from "next/image";
 import themeColors from "../../lib/theme-colors";
 import { 
@@ -52,6 +55,7 @@ const ExperiencePage = () => {
       address: "Mumbai, Maharashtra",
       startDate: new Date(2024, 5, 1), // June 2024
       endDate: new Date(2025, 7, 31), // Aug 2025
+      logo: sundayTechLogo,
       icon: <FaLaptopCode className="text-white w-6 h-6" />,
       accentColor: "#6366f1",
       website: "#",
@@ -77,6 +81,7 @@ const ExperiencePage = () => {
       address: "Mumbai, Maharashtra",
       startDate: new Date(2023, 10, 1), // Nov 2023
       endDate: new Date(2024, 4, 31), // May 2024
+      logo: porlobLogo,
       icon: <FaBriefcase className="text-white w-6 h-6" />,
       accentColor: "#ec4899",
       website: "#",
@@ -123,6 +128,7 @@ const ExperiencePage = () => {
       address: "Mumbai / Pune, Maharashtra",
       startDate: new Date(2022, 5, 1), // June 2022
       endDate: new Date(2023, 4, 31), // May 2023
+      logo: imdLogo,
       icon: <FaCloudSun className="text-white w-6 h-6" />,
       accentColor: "#0ea5e9",
       website: "#",
@@ -192,14 +198,14 @@ const ExperiencePage = () => {
             {/* Timeline dot with logo/icon */}
             <div className="absolute left-6 md:left-1/2 w-12 h-12 transform -translate-x-1/2 z-10">
               <div 
-                className="w-full h-full rounded-2xl shadow-lg border-2 border-white flex items-center justify-center overflow-hidden transition-transform duration-300 hover:scale-110"
-                style={{ backgroundColor: exp.accentColor || "#2c7a7b" }}
+                className="w-full h-full rounded-2xl shadow-lg border-2 border-white flex items-center justify-center overflow-hidden transition-transform duration-300 hover:scale-110 bg-white"
+                style={{ backgroundColor: exp.logo ? "#ffffff" : (exp.accentColor || "#2c7a7b") }}
               >
                 {exp.logo ? (
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}
-                    className="object-cover w-full h-full"
+                    className="object-contain w-full h-full p-1"
                     width={48}
                     height={48}
                   />
