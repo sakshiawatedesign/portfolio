@@ -13,18 +13,21 @@ export default async function handler(req, res) {
   }
 
   // Create a transporter using Gmail
+  const emailPassword = process.env.EMAIL_PASSWORD || "wdkddysfynxagggg";
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'sakshiawate31@gmail.com', // Destination Gmail address
-      pass: process.env.EMAIL_PASSWORD || "wdkddysfynxagggg",
+      pass: emailPassword,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Sakshi Portfolio Contact Form" <${email}>`,
+      from: `"Sakshi Portfolio Contact Form" <sakshiawate31@gmail.com>`,
       to: 'sakshiawate31@gmail.com',
+      replyTo: email,
       subject: `New Inquiry from Sakshi's UI/UX Portfolio: ${name}`,
       text: `
         Name: ${name}
@@ -73,12 +76,15 @@ export default async function handler(req, res) {
         </body>
         </html>
       `,
-      replyTo: email,
     });
 
     res.status(200).json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
-    res.status(500).json({ error: 'Failed to send email', details: error.message });
+    const isAuthError = error.message && (error.message.includes('535') || error.message.includes('BadCredentials') || error.message.includes('Invalid login'));
+    const userMessage = isAuthError
+      ? 'Gmail App Password authentication failed. Please update EMAIL_PASSWORD in .env.local with a valid 16-character Google App Password.'
+      : (error.message || 'Failed to send email');
+    res.status(500).json({ error: userMessage, details: error.message });
   }
 }

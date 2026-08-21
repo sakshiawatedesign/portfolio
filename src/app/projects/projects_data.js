@@ -19,13 +19,13 @@ const projectsData = [
       },
       {
         icon: "/icons/appstore.png",
-        link: "https://apps.apple.com/us/app/yatharth-geeta/id6473667017",
+        link: "https://apps.apple.com/in/app/yatharth-geeta/id6473667017",
         title: "App Store",
       },
     ],
   },
   {
-    title: "Dating App (Cayya)",
+    title: "Cayya (Dating App)",
     subtitle: "LGBTQ+ Social Networking & Matchmaking Platform",
     tag: "Live",
     path: "cayya-dating",
@@ -44,7 +44,7 @@ const projectsData = [
       },
       {
         icon: "/icons/appstore.png",
-        link: "https://apps.apple.com",
+        link: "https://apps.apple.com/in/app/cayya-meet-and-connect/id6763021600",
         title: "App Store",
       },
     ],
@@ -63,14 +63,14 @@ const projectsData = [
     imageUrl: "/banners/cayya_admin.png",
     actionButtons: [
       {
-        icon: "/icons/linkedin.png",
-        link: "https://www.behance.net/sakshiawate",
-        title: "Design Showcase",
+        // icon: "/icons/linkedin.png",
+        // link: "https://www.behance.net/sakshiawate",
+        title: "Internal Use",
       },
     ],
   },
   {
-    title: "CloudCard Platform",
+    title: "The Cloudcard",
     subtitle: "Cloud Storage & Team Collaboration Interface",
     tag: "Live",
     path: "cloudcard",
@@ -86,6 +86,11 @@ const projectsData = [
         icon: "/icons/playstore.png",
         link: "https://play.google.com/store/apps/details?id=com.app.thecloudcard",
         title: "Play Store",
+      },
+      {
+        icon: "/icons/appstore.png",
+        link: "https://apps.apple.com/in/app/cloudcard/id6758204105",
+        title: "App Store",
       },
     ],
   },
@@ -103,9 +108,9 @@ const projectsData = [
     imageUrl: "/banners/kitty_chitty.png",
     actionButtons: [
       {
-        icon: "/icons/linkedin.png",
-        link: "https://www.behance.net/sakshiawate",
-        title: "Design Showcase",
+        // icon: "/icons/linkedin.png",
+        // link: "https://www.behance.net/sakshiawate",
+        title: "Internal Use",
       },
     ],
   },
@@ -124,12 +129,12 @@ const projectsData = [
     actionButtons: [
       {
         icon: "/icons/playstore.png",
-        link: "https://play.google.com",
+        link: "https://play.google.com/store/apps/details?id=com.alcomap.customer",
         title: "Play Store",
       },
       {
         icon: "/icons/appstore.png",
-        link: "https://apps.apple.com",
+        link: "https://apps.apple.com/in/app/alcomap/id6761914470",
         title: "App Store",
       },
     ],

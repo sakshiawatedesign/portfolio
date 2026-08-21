@@ -99,16 +99,28 @@ export default function ProjectDetail({ params }) {
 
           {project.actionButtons && project.actionButtons.length > 0 && (
             <div className="border-t border-gray-100 pt-6 flex flex-wrap gap-4">
-              {project.actionButtons.map((button, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => window.open(button.link, '_blank')}
-                  className="flex items-center gap-2.5 px-6 py-3 bg-[#2c7a7b] text-white font-bold rounded-xl hover:bg-[#236364] shadow-md hover:shadow-lg transition-all text-sm"
-                >
-                  <img src={button.icon} alt="" className="w-5 h-5 object-contain brightness-0 invert" />
-                  <span>{button.title}</span>
-                </button>
-              ))}
+              {project.actionButtons.map((button, idx) => {
+                const isDisabled = !button.link || button.title?.toLowerCase().includes("internal");
+                return (
+                  <button
+                    key={idx}
+                    disabled={isDisabled}
+                    onClick={() => !isDisabled && window.open(button.link, '_blank')}
+                    className={`flex items-center gap-2.5 px-6 py-3 font-bold rounded-xl text-sm transition-all ${
+                      isDisabled
+                        ? "bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed shadow-none"
+                        : "bg-[#2c7a7b] text-white hover:bg-[#236364] shadow-md hover:shadow-lg"
+                    }`}
+                  >
+                    <img
+                      src={button.icon}
+                      alt=""
+                      className={`w-5 h-5 object-contain ${isDisabled ? "opacity-50 grayscale" : "brightness-0 invert"}`}
+                    />
+                    <span>{button.title}</span>
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>

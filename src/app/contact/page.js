@@ -207,7 +207,12 @@ const ContactPage = () => {
                                             ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' 
                                             : 'bg-red-50 text-red-800 border border-red-200'
                                     }`}>
-                                        {status}
+                                        <p>{status}</p>
+                                        {!status.includes('successfully') && (
+                                            <p className="mt-2 text-xs text-red-700">
+                                                Or send directly via email: <a href={`mailto:sakshiawate31@gmail.com?subject=Inquiry from ${encodeURIComponent(formData.name || 'Portfolio Visitor')}&body=${encodeURIComponent(formData.message || '')}`} className="underline font-bold text-red-900 hover:text-black">sakshiawate31@gmail.com</a>
+                                            </p>
+                                        )}
                                     </div>
                                 )}
 

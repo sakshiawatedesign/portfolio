@@ -19,16 +19,62 @@ const ProjectCard = ({
   const [isHovering, setIsHovering] = useState(false);
 
   const handleCardClick = () => {
-    if (actionButtons.length > 0 && actionButtons[0].link) {
-      window.open(actionButtons[0].link, "_blank");
+    // Check if the project is internal use only
+    const isInternalUse = actionButtons.some(
+      (b) => b.title?.toLowerCase().includes("internal")
+    );
+
+    const playStoreBtn = actionButtons.find(
+      (b) => b.link && (b.title?.toLowerCase().includes("play") || b.link?.includes("play.google.com"))
+    );
+    const appStoreBtn = actionButtons.find(
+      (b) => b.link && (b.title?.toLowerCase().includes("app") || b.link?.includes("apps.apple.com"))
+    );
+
+    // For "Internal use", do not redirect at all
+    if (isInternalUse && !playStoreBtn && !appStoreBtn) {
+      return;
+    }
+
+    if (typeof window === "undefined") return;
+
+    const ua = (navigator.userAgent || navigator.vendor || "").toLowerCase();
+    const platform = (navigator.platform || "").toLowerCase();
+
+    // Detect iOS mobile device (iPhone, iPad, iPod)
+    const isIOSMobile = /iphone|ipad|ipod/.test(ua) || (platform.includes("macintel") && navigator.maxTouchPoints > 1);
+
+    // Detect Android OR Windows
+    const isAndroidOrWindows = /android|windows|win32|win64/.test(ua) || platform.includes("win");
+
+    if (isIOSMobile) {
+      if (appStoreBtn?.link) {
+        window.open(appStoreBtn.link, "_blank");
+      } else if (playStoreBtn?.link) {
+        window.open(playStoreBtn.link, "_blank");
+      }
+    } else if (isAndroidOrWindows) {
+      if (playStoreBtn?.link) {
+        window.open(playStoreBtn.link, "_blank");
+      } else if (appStoreBtn?.link) {
+        window.open(appStoreBtn.link, "_blank");
+      }
     } else {
-      window.open(imageUrl, "_blank");
+      // Fallback for other platforms
+      if (playStoreBtn?.link) {
+        window.open(playStoreBtn.link, "_blank");
+      } else if (appStoreBtn?.link) {
+        window.open(appStoreBtn.link, "_blank");
+      }
     }
   };
 
-  const handleButtonClick = (e, link) => {
+  const handleButtonClick = (e, button) => {
     e.stopPropagation();
-    window.open(link, "_blank");
+    if (!button.link || button.title?.toLowerCase().includes("internal")) {
+      return;
+    }
+    window.open(button.link, "_blank");
   };
 
   const isLargeScreen =
@@ -84,6 +130,7 @@ const ProjectCard = ({
         )}
 
         {/* Hover Overlay */}
+        {/*
         <div className={`absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] transition-opacity duration-300 ${
           isHovering ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}>
@@ -91,6 +138,7 @@ const ProjectCard = ({
             View Design Details ↗
           </span>
         </div>
+        */}
       </div>
 
       {/* Content */}
@@ -137,21 +185,29 @@ const ProjectCard = ({
           {/* Action Buttons */}
           {actionButtons && actionButtons.length > 0 && (
             <div className="flex items-center gap-2 pt-4 mt-3 border-t border-gray-100">
-              {actionButtons.map((button, idx) => (
-                <button
-                  key={idx}
-                  onClick={(e) => handleButtonClick(e, button.link)}
-                  title={button.title}
-                  className="flex-1 py-2 px-3 hover:bg-teal-50 border border-gray-200 hover:border-[#2c7a7b] rounded-xl transition-all flex items-center justify-center gap-2 text-xs font-semibold text-gray-700 hover:text-[#2c7a7b]"
-                >
-                  <img
-                    src={button.icon}
-                    alt={button.title}
-                    className="w-4 h-4 object-contain"
-                  />
-                  <span>{button.title}</span>
-                </button>
-              ))}
+              {actionButtons.map((button, idx) => {
+                const isDisabled = !button.link || button.title?.toLowerCase().includes("internal");
+                return (
+                  <button
+                    key={idx}
+                    disabled={isDisabled}
+                    onClick={(e) => handleButtonClick(e, button)}
+                    title={isDisabled ? "Internal Use Only" : button.title}
+                    className={`flex-1 py-2 px-3 border rounded-xl transition-all flex items-center justify-center gap-2 text-xs font-semibold ${
+                      isDisabled
+                        ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed opacity-75"
+                        : "hover:bg-teal-50 border-gray-200 hover:border-[#2c7a7b] text-gray-700 hover:text-[#2c7a7b]"
+                    }`}
+                  >
+                    <img
+                      src={button.icon}
+                      alt={button.title}
+                      className={`w-4 h-4 object-contain ${isDisabled ? "opacity-50 grayscale" : ""}`}
+                    />
+                    <span>{button.title}</span>
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>
