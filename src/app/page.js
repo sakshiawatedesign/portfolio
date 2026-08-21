@@ -9,7 +9,7 @@ import FeatureCard from './components/home_page_comps.js/featured_card';
 import AnimateOnScroll from './components/AnimateOnScroll';
 import Image from 'next/image';
 
-export default function Home() {
+export default function Home() { 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
