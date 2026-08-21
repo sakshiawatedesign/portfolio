@@ -130,6 +130,15 @@ export default function RootLayout({ children }) {
             opacity: 1;
             transform: translateY(0) translateX(0);
           }
+
+          @media (max-width: 768px) {
+            .scroll-animation-ready .animate-on-scroll,
+            .animate-on-scroll {
+              opacity: 1 !important;
+              transform: none !important;
+              transition: none !important;
+            }
+          }
         `}</style>
       </head>
       <body className={`${poppins.variable} antialiased relative`}>

@@ -21,23 +21,21 @@ export default function Projects() {
                 </div>
             </AnimateOnScroll>
 
-            <AnimateOnScroll delay={200} duration={800}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projectsData.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            path={project.path}
-                            title={project.title}
-                            subtitle={project.subtitle}
-                            tag={project.tag}
-                            description={project.description}
-                            techStack={project.techStack}
-                            imageUrl={project.imageUrl}
-                            actionButtons={project.actionButtons}
-                        />
-                    ))}
-                </div>
-            </AnimateOnScroll>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {projectsData.map((project, index) => (
+                    <ProjectCard
+                        key={index}
+                        path={project.path}
+                        title={project.title}
+                        subtitle={project.subtitle}
+                        tag={project.tag}
+                        description={project.description}
+                        techStack={project.techStack}
+                        imageUrl={project.imageUrl}
+                        actionButtons={project.actionButtons}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

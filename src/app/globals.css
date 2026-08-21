@@ -135,3 +135,13 @@ body {
   opacity: 1;
   transform: translateY(0) translateX(0) scale(1);
 }
+
+/* Ensure mobile devices display content immediately without requiring scroll */
+@media (max-width: 768px) {
+  .animate-on-scroll,
+  .scroll-animation-ready .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
