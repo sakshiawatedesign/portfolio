@@ -13,20 +13,20 @@ export default async function handler(req, res) {
   }
 
   // Create a transporter using Gmail
-  const emailPassword = process.env.EMAIL_PASSWORD || "wdkddysfynxagggg";
+  const emailPassword = "tqqjctsqbgsazhld";
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'sakshiawate31@gmail.com', // Destination Gmail address
+      user: 'sakshiawatedesign@gmail.com', // Destination Gmail address
       pass: emailPassword,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Sakshi Portfolio Contact Form" <sakshiawate31@gmail.com>`,
-      to: 'sakshiawate31@gmail.com',
+      from: `"Sakshi Portfolio Contact Form" <sakshiawatedesign@gmail.com>`,
+      to: 'sakshiawatedesign@gmail.com',
       replyTo: email,
       subject: `New Inquiry from Sakshi's UI/UX Portfolio: ${name}`,
       text: `

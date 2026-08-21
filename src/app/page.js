@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   const redirectToEmail = () => {
-    window.location.href = 'mailto:sakshiawate31@gmail.com';
+    window.location.href = 'mailto:sakshiawatedesign@gmail.com';
   };
 
   return (

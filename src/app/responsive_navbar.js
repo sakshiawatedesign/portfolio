@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 
-
 const ResponsiveNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

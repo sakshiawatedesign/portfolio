@@ -19,7 +19,7 @@ export default function SocialIcons() {
     },
     {
       id: 3,
-      href: 'mailto:sakshiawate31@gmail.com',
+      href: 'mailto:sakshiawatedesign@gmail.com',
       icon: <FaEnvelope className="w-5 h-5 text-[#ea4335]" />,
       label: 'Email',
       title: 'Email Sakshi'

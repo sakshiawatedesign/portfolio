@@ -40,9 +40,9 @@ const ContactPage = () => {
             });
 
             const data = await response.json();
-            
+
             if (response.ok) {
-                setStatus('Message sent successfully! I will get back to you soon.');
+                setStatus('Thank you for reaching out! Your message has been sent successfully.');
                 setFormData({ name: '', email: '', message: '' });
             } else {
                 setStatus(`Failed to send message: ${data.error || 'Unknown error'}`);
@@ -79,8 +79,8 @@ const ContactPage = () => {
                             </p>
 
                             <div className="space-y-4 pt-2">
-                                <a 
-                                    href="mailto:sakshiawate31@gmail.com" 
+                                <a
+                                    href="mailto:sakshiawatedesign@gmail.com"
                                     className="flex items-center gap-4 p-3.5 rounded-2xl bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm group"
                                 >
                                     <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
@@ -88,12 +88,12 @@ const ContactPage = () => {
                                     </div>
                                     <div>
                                         <p className="text-xs text-white/70 font-medium">Email</p>
-                                        <p className="text-sm font-semibold text-white break-all">sakshiawate31@gmail.com</p>
+                                        <p className="text-sm font-semibold text-white break-all">sakshiawatedesign@gmail.com</p>
                                     </div>
                                 </a>
 
-                                <a 
-                                    href="tel:+919594482689" 
+                                <a
+                                    href="tel:+919594482689"
                                     className="flex items-center gap-4 p-3.5 rounded-2xl bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm group"
                                 >
                                     <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
@@ -202,15 +202,14 @@ const ContactPage = () => {
                                 </div>
 
                                 {status && (
-                                    <div className={`p-4 rounded-xl text-sm font-medium ${
-                                        status.includes('successfully')
-                                            ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' 
+                                    <div className={`p-4 rounded-xl text-sm font-medium ${status.includes('successfully')
+                                            ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                                             : 'bg-red-50 text-red-800 border border-red-200'
-                                    }`}>
+                                        }`}>
                                         <p>{status}</p>
                                         {!status.includes('successfully') && (
                                             <p className="mt-2 text-xs text-red-700">
-                                                Or send directly via email: <a href={`mailto:sakshiawate31@gmail.com?subject=Inquiry from ${encodeURIComponent(formData.name || 'Portfolio Visitor')}&body=${encodeURIComponent(formData.message || '')}`} className="underline font-bold text-red-900 hover:text-black">sakshiawate31@gmail.com</a>
+                                                Or send directly via email: <a href={`mailto:sakshiawatedesign@gmail.com?subject=Inquiry from ${encodeURIComponent(formData.name || 'Portfolio Visitor')}&body=${encodeURIComponent(formData.message || '')}`} className="underline font-bold text-red-900 hover:text-black">sakshiawatedesign@gmail.com</a>
                                             </p>
                                         )}
                                     </div>
